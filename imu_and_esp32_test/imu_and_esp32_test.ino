@@ -38,31 +38,44 @@ void loop()
     imu.getSensorData();
 
     // Print acceleration data
-    Serial.print("Acceleration in g's");
-    Serial.print("\t");
-    Serial.print("X: ");
-    Serial.print(imu.data.accelX, 3);
-    Serial.print("\t");
-    Serial.print("Y: ");
-    Serial.print(imu.data.accelY, 3);
-    Serial.print("\t");
-    Serial.print("Z: ");
-    Serial.print(imu.data.accelZ, 3);
+    //Serial.print("Acceleration in g's");
+    //Serial.print("\t");
+    //Serial.print("X: ");
+    //Serial.print(imu.data.accelX, 3);
+    //Serial.print("\t");
+    //Serial.print("Y: ");
+    //Serial.print(imu.data.accelY, 3);
+    //Serial.print("\t");
+    //Serial.print("Z: ");
+    //Serial.print(imu.data.accelZ, 3);
 
-    Serial.print("\t");
+    //Serial.print("\t");
 
     // Print rotation data
-    Serial.print("Rotation in deg/sec");
-    Serial.print("\t");
-    Serial.print("X: ");
-    Serial.print(imu.data.gyroX, 3);
-    Serial.print("\t");
-    Serial.print("Y: ");
-    Serial.print(imu.data.gyroY, 3);
-    Serial.print("\t");
-    Serial.print("Z: ");
-    Serial.println(imu.data.gyroZ, 3);
+    //Serial.print("Rotation in deg/sec");
+    //Serial.print("\t");
+    //Serial.print("X: ");
+    //Serial.print(imu.data.gyroX, 3);
+    //Serial.print("\t");
+    //Serial.print("Y: ");
+    //Serial.print(imu.data.gyroY, 3);
+    //Serial.print("\t");
+    //Serial.print("Z: ");
+    //Serial.println(imu.data.gyroZ, 3);
 
     // Print 50x per second
-    delay(20);
+    //delay(20);
+
+    // Check if board is tilted 
+    bool tilted = 0; 
+    if(imu.data.gyroY > 20) 
+    {
+            tilted = 1; 
+    }
+    else
+    {
+            tilted = 0; 
+    }
+    Serial.println(tilted); 
+    delay(20); 
 }
