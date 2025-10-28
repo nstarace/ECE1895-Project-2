@@ -66,22 +66,22 @@ void loop(){
   
   if(!tilted){
     imu.getSensorData(); 
-    Serial.println(1); 
+    //Serial.println(1); 
 
     if(imu.data.gyroY > 220){
       tilted = 1; 
       incrementScore(); 
-      Serial.println(2); 
+      //Serial.println(2); 
 
       getTime = millis();
       
       while(millis() < getTime + 10000){
         tilted = 1; 
-        Serial.print(3); 
+        //Serial.print(3); 
       }
 
       tilted = 0; 
-      Serial.print(4); 
+      //Serial.print(4); 
     }
   }
 }
