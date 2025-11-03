@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=LRCLK_MAX Pin=U1-20
+Removed Pin From Net: NetName=BCLK_MAX Pin=U1-21
+Added Pin To Net: NetName=BCLK_MAX Pin=U1-20
+Added Pin To Net: NetName=LRCLK_MAX Pin=U1-21

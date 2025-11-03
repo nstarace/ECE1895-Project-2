@@ -1,0 +1,20 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Cook_It.PcbDoc   11/2/2025  10:03:08 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : Cook_It.TXT
+EIA File   : Cook_It.DRL
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      8mil (0.201mm)                                            Round             18        PTH        2.60inch (66.02mm)
+T2      20mil (0.5mm)                                             Round             10        PTH        4.01inch (101.82mm)
+T3      20mil (0.511mm)                                           Round             15        PTH        4.98inch (126.45mm)
+T4      28mil (0.711mm)                                           Round             20        PTH        3.33inch (84.46mm)
+T5      40mil (1.021mm)                                           Round             17        PTH        2.47inch (62.61mm)
+T6      39mil (1.001mm)                                           Round             2         NPTH       0.31inch (8.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              82
+
+Total Processing Time (hh:mm:ss) : 00:00:00

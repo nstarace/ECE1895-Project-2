@@ -1,0 +1,28 @@
+Removed Pin From Net: NetName=MOSI_SD Pin=J6-3
+Removed Pin From Net: NetName=3V3 Pin=J6-4
+Removed Pin From Net: NetName=CLK_SD Pin=J6-5
+Removed Pin From Net: NetName=GND Pin=J6-6
+Removed Pin From Net: NetName=MISO_SD Pin=J6-7
+Removed Pin From Net: NetName=CS_SD Pin=J6-CD
+Removed Pin From Net: NetName=GND Pin=J6-G1
+Removed Pin From Net: NetName=GND Pin=J6-G2
+Removed Pin From Net: NetName=GND Pin=J6-G3
+Removed Pin From Net: NetName=GND Pin=J6-G4
+Added Component: Designator=J6(CUI_MSD-4-A)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/MSD-4-A/Same+Sky/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Same Sky"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "MSD-4-A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/MSD-4-A/Same+Sky/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=MOSI_SD Pin=J6-3
+Added Pin To Net: NetName=3V3 Pin=J6-4
+Added Pin To Net: NetName=CLK_SD Pin=J6-5
+Added Pin To Net: NetName=GND Pin=J6-6
+Added Pin To Net: NetName=MISO_SD Pin=J6-7
+Added Pin To Net: NetName=CS_SD Pin=J6-CD
+Added Pin To Net: NetName=GND Pin=J6-G1
+Added Pin To Net: NetName=GND Pin=J6-G2
+Added Pin To Net: NetName=GND Pin=J6-G3
+Added Pin To Net: NetName=GND Pin=J6-G4
+Added Rule: Name=Schematic Supply Nets
