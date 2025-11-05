@@ -1,0 +1,2480 @@
+// TODO: Figure out how to wire up assets to esbuild
+globalThis.EASEL_ASSETS = {
+  fonts: {
+    amaticsc: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/amaticsc-bold-webfont-4313494a910f4a06d4cc93f136a3f1bd3490eb11c971850963d8883a74ec76f3.ttf",
+    bebas: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bebasneue-webfont-0e2479d0404310997f18bcec64fe82734fc9387c2533cc8d4bd07adea0c0466c.ttf",
+    bemio: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bemio-webfont-c9951ba1fe552e4b65bfec9dca1756af2e8d2cdf0116d7a951d494e298527422.ttf",
+    blanch: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/blanch_condensed-webfont-abfa583480f0694374bf42e579903bf144f66eda0c6baa3c95c565faaf4ad7f4.ttf",
+    cinzel: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cinzel-regular-webfont-056221991a857a24b1b81b632143a39c0029c87f13cb04e307bb6446cdd21f6f.ttf",
+    homestead: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/homestead-regular-webfont-d767f9d114fce371c375815f9b17997e1f242513b51d7e3aeaee992e02722436.ttf",
+    josefin: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/josefinsans-semibold-webfont-7836648d0952a8804d655d8c8ba1336bb86305618cf51c20980629fe362ac9fe.ttf",
+    lavanderia: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/lavanderia_sturdy-webfont-cd14c71bb0996ab977f137cd774bb73a2968eaf16875734a08b6b7744210e645.ttf",
+    montserrat: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/montserrat-regular-webfont-ca8a9494267d88acb3a2131b7ee2832f9f4e4ff923705ad227e9c0f65ba97a10.ttf",
+    ocra: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/ocra-webfont-31b8226c31fd94f009fb3e8e85ded014f15f028301342331619464795a7812c5.ttf",
+    track: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/track-webfont-5af3f099b108fb6705c425d5b8dec15eb9a4140345e10e5252c5bfb97dd704c6.ttf",
+    codepro: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/code_pro-a217e21a4e546c739cbfdc4a7423e3769264cc8d48c59476b006fe5adb2bdc7b.ttf",
+    intro: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/intro-8fa8d67c35b68151921a1e57c2b15ba09a446db0c14aa0103a07a74b9ed216c4.ttf",
+    baskerville: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/baskerville-c7e9353a2fd8ef6b886add0800a2a65c33de95883f04dab0096b8b1f1bc913ae.ttf",
+    bangers: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bangers-d6b83eb218a83cc254f1ced118679b6379fcd3f01b871b12e46076fcc25c928a.ttf",
+  },
+
+  images: {
+    add: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/add-0fd0195835eba4566082a9d44876995156791634bb3e7595a3b8226fb6d9e272.svg",
+    addToolboxItem: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/add-toolbox-item-aea5e326dfe12e83cf93fe32e7b0519b65fdb253bd84a726f202a0b4864c62af.svg",
+    bookmark: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bookmark-556dc880eb239885c9a9ede0da7270a4bc5f086ef3bb2265e79182382c477128.svg",
+    spinner: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/spinner-373d5b2982116e9d91a8353f8536a69781adda1e82a9203c5108b86086f1b07e.gif",
+    warning: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/warning-c38a02198fc241162cf3fa504ccdedf7a6a49ab4b403a1416d5ac52873932c4f.svg",
+    sadEasel: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/sad-easel-71a02b8e889365742ffbf8bbc58e757cad4c65eb117515b424919b3dc34db734.svg",
+    sadEaselOrange: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/sad-easel-orange-f21976020b1b9a6f4e7e350b9ed825cbfdc89c0037b341bb04251593fc24ae20.svg",
+    glassesEasel: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/3d-easel-33e3c6a4afdadb0b6c92e5850a31728f2393b440a9f4f74bd2a7be0939ad6ecc.svg",
+    glassesEaselGreen: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/3d-easel-green-39c4c9071497bef6c796d6a45b5ce988baa6ad1e7a27845d38ad951c07956caa.svg",
+    easelProLogo: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/easel-pro-insert-ce8f7ce7c2a061b3c9b7b73f2200d440d1144eb6ad45e320f5f0bfdb25fed0a3.svg",
+    easelLogo: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/easel-insert-335afdca023ce32ade5dffdfcaef432524bbcfa32d5fa7b9321518b11adb5d4d.svg",
+    easelLogoBlue: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/easel-logo-blue-18f6f66507b2d5f93b4f6f1fc7ce65c9965f1764edec78ec63f68727e420cad1.png",
+    blueBit: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/blue-bit-338e2e253791456a906e1aae01c8fe3af7e8658db57cdf782a103a176573d6d2.png",
+    blueCircleLight: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/blue-circle-light-57828750571ba3a7a3dff4c38a7983b3b8ea1bd3a85484340e4e8d7362db2d4f.svg",
+    blueRadioButton: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/blue-radio-button-b641c796c715a88df06694512b2870bc09367c931f1d9ed323b0795fd1ac141e.svg",
+    greyCircleLight: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/grey-circle-light-823ae483751d1761c5569a9bed7e11f29eec3a39af457a9ed4cb3290d9d1eec9.svg",
+    carving: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/start-carving-small-d5903ea505f89e4e8f83582c4106544f251c5e1569a3963d0c2713223954484c.jpg",
+    carveyClampedMaterial: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/clamped-material-a3420fceb94334149882fa1417b60d616698fe847aee781db5e996776f6e4681.jpg",
+    emptyThumbnail: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/empty-thumbnail-d9c3097be07d8f9f550410fb83553356a2e4fa255405758b3f1e19a843428246.png",
+    exclamationIcon: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/exclamation-icon-507426bca80c02f914f41d2dd13702037ff2deabadd335c9cd6d9424eca172f1.svg",
+    workArea: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/expand-0e98b7e88be60e7d15fa8ec64087c4dd767b75ae4921cd912ad9f963f0783a3e.svg",
+    securingBit: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/secure-bit-06d7d0ca04768a66e92d1acd3056337f064bfbfab6f022384baa928f2a9d3f1e.jpg",
+    firstProject: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/first-project-5e3797c8f338bd47ed6f15af2494216b72914517afcd867a12d73928d7241ed4.jpg",
+    gcodeEasel: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/gcode-easel-2d07bfff0366c955951d640878ec4e2f583900b3594f36929ef37a9591d39a20.svg",
+    walkthroughTilingShift: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/walkthrough/tiling-shift-3ec7cadd022f65d72616139af4007d15c365c6a4c2f7adea3c59ae758fb55001.png",
+    walkthroughTiling: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/walkthrough/tiling-67fe43fcddbc51e3603c39c007b1b4a032930501bd15f54b86026603ee3c23de.png",
+    xcarveClampedMaterial: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/walkthrough/clamp_material-d0f22369881b85fab2050eba6296e9f6650847aab2b92f736240fa805dd462fe.svg",
+    xcarveClamps: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/walkthrough/clamp_only-bd2fdb3bd6abf5a4f9c4c20ac8806450f7db02501d71df8568ce631126aabea7.svg",
+    measureMaterial: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/walkthrough/material-measure-fbdc7b29402172f5887e6baf524aff3ba91dee112137d352760a958fd7dfaf67.svg",
+    addLayer: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/add_layer-1fe2265e336ae03ffb1b00a2a0b44296b01d1518de48818c9254a52cb7dea8e0.svg",
+    zeroXYFrontLeft: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/walkthrough/zero-xy-14c018c1dd7d9c4b3e1f9c22433441071e35480a337285c3e753f054fb5856a0.svg",
+    zeroXYCenter: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/walkthrough/zero-xy-center-06c0a26d89a8137c642a67031e298b5917b1be96181c383e5cd394c77a92b1f4.svg",
+    zeroZ: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/walkthrough/zero-z-474a2dd5e174bd6b80048535b440e340b5e774caaf38cd71cb624e66593a16f4.svg",
+    liftSmartClamp: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/le_clamp-333a699678b8d9e90f138cd435ad3420fa1e565190942d6d491abf7258f5266c.jpg",
+    fastenSmartClamp: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/fasten-68fce2db2e3dda9ff618d5cb6715eb5673fcfa56d3b01dc79ee5aa97cb2ac861.jpg",
+    secureSideClamps: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/small_clamp-6582cd6fc726f5285daea32cd8967f1ceed617d542514a37bd6ae1126541ca28.jpg",
+    liftSmartClampRed: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/remove-clamp-red-017f87c92174cf622ed8f96956bc1b29b438582473652fdb6ac78705cf7e6e6e.jpg",
+    fastenSmartClampRed: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/smartclamp-red-cc11c0ed15155b4470d63b127a7845f49fbde1e68dee21d928bf98bd7aea3f0f.jpg",
+    secureSideClampsRed: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/allclamps-red-e75eb53378ed1813f30b4473f283d6f6c3dd22a2c16aec77dae97924cec8f8e6.jpg",
+    liftSmartClampGreen: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/remove-clamp-green-f643f4cb329ea8b197bd7189ddb9afe652f59e2a0161bddf0b1ccc8c686ada8d.jpg",
+    fastenSmartClampGreen: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/smartclamp-green-71a2f4fd3c57cfd3677d186c6037d4a3443c4e834236667443c13b77c88e98b8.jpg",
+    secureSideClampsGreen: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/allclamps-green-c7bb824b1ed2f6e1e181d8d8d38949ecdcf5afbeedde01acd77dd26eaba71488.jpg",
+    liftSmartClampBlue: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/remove-clamp-blue-7936ba6d9658ddb10c36d8ce0291cae7a88d0bd9ec87e770472a268f6354bf2f.jpg",
+    fastenSmartClampBlue: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/smartclamp-blue-92daefe2245dc2f35c35cf998656dbff90dcc0857beef30f3253d4ad4f188f60.jpg",
+    secureSideClampsBlue: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/allclamps-blue-3ad33d483ab1877c897e98fa99505839e2d7bee3ccc2936419b5b0fd1c21fd2f.jpg",
+    spindleDial: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/dewalt-spindle-dial-7bc921ecde0c13c13ec0435284b265d1eacea942bcee0348a7a2251e05b49e93.png",
+    straightAnchor: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/point-straight-9c111b415c13510c983289fcfb8e17ee441e68b1feedd0032416ce9bfa8e2d86.svg",
+    curveAnchor: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/point-curved-3f99652a0eebecf99d8b06855c122cc6d09b83f7e8efb83d45ec80c05f208092.svg",
+    onPathCut: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/stroke-icon-path-f5bafa2cc880a15c913b2aa19b0f53c0015d82125b6a69ec3ff1fd4bcc4e44ec.svg",
+    outsideCut: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/stroke-icon-out-e505b06453921282c0da3a9cc59000a599f91465b339e4ed39daf543bc457607.svg",
+    insideCut: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/stroke-icon-in-883fa1622a82fdf074e128259305aba0b564a6ec934e4040fb633272cc363a9e.svg",
+    fillCut: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/fill-icon-30a1f07b6ae15f148ead04a6df5e2b4f15e0101c3e16b8777615af218954ef5b.svg",
+    machineControlsIcon: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/machine-controls-icon-25d361dbeb0ce2b40fb7aaa15c014b3bdc73043fd9a8099acd21d016b3e86b61.svg",
+    probeImage: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/probe/zprobe-connection-aa01e9e947c8ac6d5fb7322216d69a6c28470750429a827166745195aa57443c.png",
+    probeRemoveLeads: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/probe/remove-leads-6f7631b5ebcfd54bc29fb050cc5ddc089273069924d70978cf2c7ceae841eaa3.png",
+    probeAnimationBit: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/probe-bit-3412232d0836c70f85462e763a9d7b8a9b9ee6d9366317edec0c1b2495719945.png",
+    probeAnimationMaterial: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/probe-material-6821a03d2e694cddaa41aa386e7721956708a3456a9fe3f861b31293c47c42d4.png",
+    probeAlreadyTouching: "https://d1ruu3w8cmk6tc.cloudfront.net/probe/already-touching.png",
+    probeClipNotOnCollet: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/probe/clip-not-on-collet-9d506e3c02e7b39148430e9175512ebdcc00ae8a5b77b0333c6f68d8208e1f9e.png",
+    probeDistanceTooShort: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/probe/distance-too-short-8988fd641ae0c6fb2166a04714454ba70abe492d79445624e12d8a8d31501d85.png",
+    probePuckNotUnderBit: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/probe/puck-not-under-bit-b12968160db019e4d741a5f4ff68ff03476606ff29355a35007b0d6e09c0c04c.png",
+    probePlugDetail: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/probe/probe-plug-detail-4ffee88d851055d3e2c05751b9356a6699c0728647e7f3009fa9406a219f42de.png",
+    touchPlateDetail: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/probe/touch-plate-detail-5ded14043b394db8a60bf32bc9035a429f121d963f3abfdaa0ffe0d1de3c4b8c.png",
+    clipDetail: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/probe/clip-detail-04b6e0a77cab32405fbbbe950456382b1cc619639687d9d7f0b56a25ea21af3f.png",
+    xcpProbeImage: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/probe/xcp-zprobe-connection-c9f40f3d907f4f2b072f48d70bf620a53c45c687242ceb7c55af018ffaf7c79d.jpeg",
+    xcpProbePlugDetail: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/probe/xcp-probe-plug-detail-bd393f4ada3d91196bb5d11950657dcb200a78d011cbe2e4a792360eb3029c30.jpeg",
+    xcpTouchPlateDetail: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/probe/xcp-touch-plate-detail-5173f66af1b0886b92c35287ca6797a11cc25f48fc40486da48abb99b80f7603.jpeg",
+    xcpClipDetail: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/probe/xcp-clip-detail-c4a26c37d2c79af62a2c2b082f2330194a1c13ae81a58226fc57332842039960.jpeg",
+    published: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/published-b54134fd6cd722ef074b894bfc6873aafc0c1a773ba41e4fc9fd4527ffb1783c.svg",
+    savedCutSettings: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/saved-cut-settings-c33328b3cd46b670f7a90614bdfae4dd569de81ea469e52f7e24cb9ec1e0863f.svg",
+    video: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/icons/video-f3264168e8a6302f1153f23e3116a2823d31cae081479d539938d934e84e8cb9.png",
+    otherBit: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/other-bit-4b94b63b0f2c39ec4263b592891f5ee2a42e335bb6b2a108cde12b4dde2e908e.png",
+    downCutIcon: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/down-cut-icon-2227211a2e02f1a394bd35e56ed3201701e003225d4e3225baed77120d0d9ed1.png",
+    dimensionIcon: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/icons/dimension-0060d3def394079c86b6d3c5f42b2b483807aebaf505f656a715eab404d3cedc.svg",
+    angleIcon: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/icons/angle-a983c07aca723e3f05b962f1a4ee24e0a6c689f16070378abe4e852a10ef5636.svg",
+    shoppingCartIcon: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/icons/cart-20b5be64a36a80ff37d36a80faac29af86a195c555acf33c3972e327e5aae343.svg",
+    straightFlute: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/straight-cut-icon-68f264604c4d24ea05ea8f7a32e6afd642411e3f48cc45c9b63d5fa2d9340b70.png",
+    spiralUpFlute: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/up-cut-icon-e0d857999fa74f5f9b359c8299a1e09d7341dec592eab880320e96841212e067.png",
+    compressionCutIcon: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/compression-cut-icon-fd278ea7dbd8f2951bcb00601fb0ff7407cd78315cb13587df6f8fca8b5322fd.png",
+    vCutIcon: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/v-cut-icon-1228fcba961e5e1e0569f36044398f71a460bbfc92f8fd69b410b975f0629c35.png",
+    ballnoseCutIcon: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/ballnose-cut-icon-6dd251cd070e97f9b51e76307526ca9a3df63aeaedef074f18c25df789a9cba3.png",
+    grayEasel: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/easel-gray-on-white-5c02e73de6a7befb1ab0d699badf98519495047a5930aa1f87dd37527fe59dee.svg",
+    greenCheck: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/green-check-1afa1d7a08274f3db2a752e3dc0b60c266b22911c775f19578b7e9deb01b64f7.svg",
+    froDemo: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/fro-69c08adcb34eda3fe2e20a3fe47e8a965415e520271b77ae184c4d6093c0ddfa.gif",
+    easelInsert: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/easel-insert-335afdca023ce32ade5dffdfcaef432524bbcfa32d5fa7b9321518b11adb5d4d.svg",
+    easelProInsert: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/easel-pro-insert-ce8f7ce7c2a061b3c9b7b73f2200d440d1144eb6ad45e320f5f0bfdb25fed0a3.svg",
+    copyEasel: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/copy-easel-944876236bc5aa5ac091d058f585ace63ed59d3706c2d8f91fc37dbf4919602f.svg",
+    circledCheck: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/circled-check-5ad0461be9185416b4e43e94fc7543e356e57ef1832d448b5062ef343a5067a4.svg",
+    materialDimensions: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/material_dimensions-53e8d572b19e0401b2a7913904a4f6e580f00b2cc79d9f605c605cf55e3e480c.svg",
+    frontLeft: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/front_left-0c2f45fbd3376f9163c9d184d272bcbcfcb3ba1c62a7e347dbdbbaa105e719f8.svg",
+    center: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/center_zero-a7a0043cf879950bc338ae7351d8d6daba0b8f0516f63a6f94a543fb4e65a7d0.svg",
+    otherMaterial: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/textures/other-material-4500b4ace97b79b96755edcfd6ce9ad1c201e33539bbe69fbf396626ea5a79c9.jpg",
+    lock: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/lock-b724923d85e56fb2057b7699eb883d1bcb41728b7aa3f25aae11751dd8474972.svg",
+    unlock: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/unlock-ff104419de98d6747884a59849a793c50b436d748cb91301f5e664a3811d3fbc.svg",
+    proDesignLibrary: "https://d1ruu3w8cmk6tc.cloudfront.net/icons/pro-design-library.svg",
+    tilingNumbered: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/tiling/tiling-diagram-numbered-ad25b28b63ba3341168eb3d3feed287ac9cf965a3df13f98c708512cd873b204.svg",
+    insertPlaningBit: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/insert-planing-bit-4b96976588addc7b901b07b18eb502b454f7b366a034248ee43be690bb6fbb9c.jpeg",
+    planingDrawing: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/planing-drawing-7cd91e871310c768ccd8014bb3339e9cd309f55b05a9d60b04a921c767335712.png",
+    lowerPlaningBit: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/lower-planing-bit-d81085b7a4f16b00602b11e0b4c58f28d70073c6a0d686e5a8721affcbe214af.png",
+    inventablesLogo: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/inventables-logo-dc6766ce0854825ea9c6d6b371c2bdc463919ed9f5e69ed3e705901e55a7b3a5.svg",
+    commentsIcon: "https://d1ruu3w8cmk6tc.cloudfront.net/icons/comments.svg",
+    switchViewArrow: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/icons/switch-view-arrow-2906e58ac35465a756efcd0fe1955d4f919cfe583ff20884e317958d3c53284f.svg",
+    loginEaselPro: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/login-easelpro-85a7a8e76f004369ec37072846f0f31d959770becebe33bbef65bf572116c553.jpg",
+    loginCabinetmaker: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/login-cabinetmaker-3758db7564cce36875b31a282e8eee98b6651dfa73489da7fea8d74f3c705111.jpg",
+    guideLinesVisible: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/icons/guides-visible-yes-e9b6bde6622ea9a204e10e6571995432354d85eb4337742be6e7e206fa2017f6.svg",
+    guideLinesNotVisible: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/icons/guides-visible-no-06469bf80ab59c7b49a6a8c6eee10c2621bd005793a66a4bee369bda80c46692.svg",
+    interestProfessional: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/interest-professional-2ca1ac5fa25d163f1f76a3ecb0824b827f31e611ce72b656db428453ac079843.svg",
+    interestPersonal: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/interest-personal-47ee6d33bb0dd3fef7574668c4f179e16fab2e2e99ee243cbf2b7dbbd14877a4.svg",
+    interestEducational: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/interest-educational-e27b4af16511e3f88eaefa6ea17aabd693de4b5717ea80d0d122e26b6a601311.svg",
+    cabinetmakerPrintFooter: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinetmaker-print-footer-64c400d3bcaf8a0958bc621429960a6b42e874516e8d51ac3cafb1edb3637e27.svg",
+    cncMachine: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cnc-machine-eb11f01a851ce882e6912a77dee87b7532a31d07755bb1c71aef2394730ca467.svg",
+    cncMachine2: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cnc-machine2-2e603f645a1fc765750436d8c72cbf8056046c480910065d9581d98294a15af6.svg",
+    signPost: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/sign-post-a63e0ab14dbe691af5a72168c2fef9c6670d84047dd922e9c3dbabd75b664b4f.svg",
+    pencilAndSetSquare: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/pencil-and-set-square-50ce182a7ef4fe089d80ad86497ba9061ad0dfeebecd32d6fab4b5c48774de6c.svg",
+    dxf: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/icons/dxf-0b0334d04c8366403c45f6f1f92931710b4838e8062580a410dbe854f88405ea.svg",
+    monogram: "https://d1ruu3w8cmk6tc.cloudfront.net/icons/monogram.svg",
+  },
+
+  bitsources: {
+    
+      
+      amana: {
+        
+          
+          "43500-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/43500-K-f2b0d355b1289cb2e77f5053123590a1e61c9f9dee72be8caf5af645510c0a6b.webp",
+        
+          
+          "43504-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/43504-K-3b4a38f146c604be5850f2f14712127a63b5682b9f13cfdb3c765d44c2c71b71.webp",
+        
+          
+          "43530": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/43530-97270fb862434968280784eb676716ab499400caa610ead4b3120339183024b9.webp",
+        
+          
+          "43608-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/43608-K-6e33a1b365f2a677d311058dc3294cd68933c32df3f641da883d6a156cfb4572.webp",
+        
+          
+          "45200": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45200-250de02156fb7b63fbb1fcbe638291f16658b8e307d3ac21c795ce0fe938ae67.webp",
+        
+          
+          "45206": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45206-cab769dddd5b772a692c524df45d25ea3b77cb644aa041d72f0611cbc594ea79.webp",
+        
+          
+          "45210": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45210-0bbb0cf910f86f4170fcca3d977a9864aa3fd649db4399a61f43b295de638cf4.webp",
+        
+          
+          "45212": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45212-f85b9e508c071cdaee3a2a32fe988996bb3cf3da18f5bbaecdf943b2598df282.webp",
+        
+          
+          "45213": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45213-ff8ebeedccbef0cd0f41409e7fbee1eeab51f1407960406e87c1649e8371f734.webp",
+        
+          
+          "45215": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45215-09fe1686cd439c0c3f8feb5853938591b532a403685ca1af900e1791f0c80e23.webp",
+        
+          
+          "45217": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45217-5b4472ac94938a11ba775f09ea0f919ff52f94a773ece808a3866ab5bbe5e0af.webp",
+        
+          
+          "45218": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45218-72ef8bdbae3cd4b77158d7f6e227533e1c31651cad4a5d6d8cf407d846e7a511.webp",
+        
+          
+          "45226": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45226-db5d73a367ce13318b553ee1a9beb439f5357720c515afa126823b166ed353ca.webp",
+        
+          
+          "45253": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45253-b0827670424b19c95dcdd27676928cafc156aef0718d63e5b7e6f0a049279778.webp",
+        
+          
+          "45404": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45404-998f39203cbd7608905e88016f181b9d2a3515664f47873e4288df98929c176e.webp",
+        
+          
+          "45408-3": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45408-3-0365235aacfd58a82b10e5748692799a1d750d0f6a645555f95842d21374d2d4.webp",
+        
+          
+          "45414": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45414-9d1d767275969e74103ea5d1b6d9c02202664f5fcfcbaf3609375db8e1369eb8.webp",
+        
+          
+          "45418": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45418-9237d217f227f3c0a1838b1d7cf2f8c54fec44c2ec9e651e2fc03290da23ed08.webp",
+        
+          
+          "45420": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45420-1bbaed186f2f766f7f22f30f110cffb2a747d208583981b8565587507738a14f.webp",
+        
+          
+          "45422": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45422-599ebf9c783a3bc598384fb16c05341745308b8e3de89526cc4f63954f32adbb.webp",
+        
+          
+          "45424": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45424-d85f1928777d16de188c477e68d796835e0f4fabed1ac1835f4a695d02113f55.webp",
+        
+          
+          "45426": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45426-bbaf5ed00d1ee90113cb281e1606097dd9e5ba4fdd0713262399d3bb9bb8e0aa.webp",
+        
+          
+          "45452-CNC": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45452-CNC-bfa4d610201e52bcbfd8640b1c90589eade8a8edbf94a8fc3351aea6add9124a.webp",
+        
+          
+          "45486": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45486-e0399ad66e3d4a08b8fe5b3cde24bf8944e5bda59422fe0bc8388b616f25c130.webp",
+        
+          
+          "45523": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45523-a8f6d3db826e22f3bded9b958057d46c276869270245925173c119d552af989b.webp",
+        
+          
+          "45525": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45525-f5965cd03c71f9113b21317e8b9f647b781060ff7d951866f407ce12574dcf6b.webp",
+        
+          
+          "45526": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45526-85d0bc507cd7c8fc6e03d5471ea50fd8f3601a21a7c2f612fee6123b1c58c6b4.webp",
+        
+          
+          "45527": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45527-cb0a62bd42031036a2eb9eca6d37d6b76ecf697aed6eba8bcfc43c87c3548814.webp",
+        
+          
+          "45560": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45560-ac4ee56cded4b1a439658e37dbf579fb69b9b36e7c29f8a3bbaa50a59082a071.webp",
+        
+          
+          "45566": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45566-df6accb80bb7d8ab1f0a3694a9c7d5a0775a42234ec0360e171c26faa9e4b669.webp",
+        
+          
+          "45569": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45569-9ae5ccd4ec48f2643bcdd1cbc5c76314168581ed248304277069e34a61b443bb.webp",
+        
+          
+          "45611-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45611-K-943edcf3b79464e64ff4f17cddb2877acd0b4057439da521a2a5fae854560b45.webp",
+        
+          
+          "45620-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45620-K-7fce808cf32cbee21234cbad40fbfc203a7ec511b1ef1aefe957390d998fb66d.webp",
+        
+          
+          "45620": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45620-44a32f1bfff8c65a916f43138dcdb4213f5fc769f1cb9d18c3af04b124e22770.webp",
+        
+          
+          "45621": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45621-d3eedfbff2efd4e940c737dcfd4fe5f64caddf524be08caf75f88bfb0840f1ef.webp",
+        
+          
+          "45622-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45622-K-510402eb5efad6406c935dd4c32fd157aae841337918c597dd809e4fce9d45d9.webp",
+        
+          
+          "45622": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45622-4875be4c136d4220a8057bbad1d591a6b721a40c9dc70c3716d85194080814fa.webp",
+        
+          
+          "45623-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45623-K-8527d7c28d90b6b59c3f6e4cbb7a6d98faf7d9c88e7e8ab02e6de269f6dca14f.webp",
+        
+          
+          "45623": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45623-319394b7b324feeee043eca3220196e38281573be54a76bf625c4824a4423b46.webp",
+        
+          
+          "45624-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45624-K-b9791d11c03214d4f624e53a48fc1ed5bc25e8fb326779e5d3075704f779a7a0.webp",
+        
+          
+          "45624": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45624-a85b2afe38d37420145a1ed5b8fcdac687afe4752936ae4a0bdcef8c9843ce18.webp",
+        
+          
+          "45625": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45625-4b231a91f9e7ec0fcce2ab705b12fb725d373a6286c9abfe05a7c72e7da4f14d.webp",
+        
+          
+          "45626-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45626-K-dbe82ff2286cd5b5a7c5b48a4b2b6b7decebd9f8db5e2bc85b1919d746319f08.webp",
+        
+          
+          "45628": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45628-529cea31f0544a6070ab0fd97aaacba33818ddf3d6e503d334d78fade3aa1337.webp",
+        
+          
+          "45630-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45630-K-83377a8f101683e00acdea6cda70730b5e34d1ebb4e799ee0e8c58cedaaf59dc.webp",
+        
+          
+          "45633-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45633-K-164e13f9e1d4b9e98a4500463677e941eba27ec32f6628e355dd657dd30311c7.webp",
+        
+          
+          "45634-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45634-K-4533e29834dba15d23866d0894e7e72e53455ae712103da90a1f728c5627a2db.webp",
+        
+          
+          "45650": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45650-9ed87c459e637b9db862141085ec77c80bd905f9bc5aa59047f4ea1a3dd07948.webp",
+        
+          
+          "45652": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45652-a3e6ea6a54dec186d7b479d2ef79b247ec04931f4a40844d6233c5bb08d4c0b7.webp",
+        
+          
+          "45701": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45701-7aa29d5fe805a1176044b5a633ae90b0b45561f6883c881be3eb27f6236d0522.webp",
+        
+          
+          "45704": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45704-07dd34b23fe13b5a8edfa6d25928224cf5deacdd0e26c3efee15f458784894de.webp",
+        
+          
+          "45705": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45705-b669ba497c4fea15aecff9645c6bc3b70031a128d899299ced222c2391fe6608.webp",
+        
+          
+          "45708": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45708-c765e429d929deedac3a7336f34c4c89b3613bea9878ab97054a52a924a33630.webp",
+        
+          
+          "45712": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45712-b6df28e8039562cd36d51413b586bac6db7bcd84a9eefa3f050f6373308e6647.webp",
+        
+          
+          "45730": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45730-09af239260b08491262adf71b95db1f4b6c831def124e21a789d55c0559d0ec4.webp",
+        
+          
+          "45732-CNC": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45732-CNC-1a0a66bed69aeaf9604934e8a46d5d50484d353731711b53d7609a8de0d87516.webp",
+        
+          
+          "45751": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45751-846d700666ca00feee31ba957b2a88936ef93313ee924496458c4cf2deae0b4b.webp",
+        
+          
+          "45756": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45756-e979de2d0b059bb38e9ef4658f96f8d121d61dfe4de8082cc45cfc463501ad0e.webp",
+        
+          
+          "45771-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45771-K-422b6d41f9585c308894a96e434e1135f3ae1900dab0fbc10cb476fdda7cf8d0.webp",
+        
+          
+          "45771-MK": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45771-MK-f61061cefd02515af86cb2f93efe9045af4b55eed030b361a4a9a9c30cb8f747.webp",
+        
+          
+          "45771-Z": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45771-Z-95d713935b17aebd32583c623715743f8d0ee2e6cc58e61170bfcad384b94acb.webp",
+        
+          
+          "45771": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45771-957e59a1aaf9f0dd3af9c4cafd8e02455dd25dca293dc187fbe57b624326731c.webp",
+        
+          
+          "45773-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45773-K-dfd79f6544c106fc6f337b32b6547d081c2c8f10c11f1582b06ba6ef65cfd4f9.webp",
+        
+          
+          "45773": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45773-870ec38a933036fbf5fd7f8327a1d4e46757a12a3d47e4cb24c91c3166f4736e.webp",
+        
+          
+          "45780-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45780-K-06088322334a25ebcd67360b30693b436ced08c5c574c27bea34567a8f181a5f.webp",
+        
+          
+          "45780": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45780-415a37f2275dbbe8927026c1205d0fa6a9ac9db1683a687334e59b2e391f13bc.webp",
+        
+          
+          "45783-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45783-K-9917ed160ea13569679468350bdd9e8d49d2e326af82644e9aecfb1a14d28fb9.webp",
+        
+          
+          "45783": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45783-53c6ecfb0392a11b16eb38a5518727e5f7383d6067f60a5e3e2acfc6a74423b5.webp",
+        
+          
+          "45792": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45792-7d5038564a91699f7144b6c54216c95d04f88e6af11047c4ee8166aa8f3cf570.webp",
+        
+          
+          "45795": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45795-5f86023cb64afa2111da0b8f97c785485a3a2259220d7c3e9b1750d80cfd6e82.webp",
+        
+          
+          "45798": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45798-533edceb38d66b8bb1d72b15a1612bc5f2dab7cf621298292507e74ada1f2eb5.webp",
+        
+          
+          "45802": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45802-5ad5b17013f25df7b1ca8adb549a058d6105595a88621bf6dc38c4b19f302cec.webp",
+        
+          
+          "45804": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45804-efae4687d6d0c377af84f2de6cff206898d2ea49e1730c81a54fd710a4c3ec06.webp",
+        
+          
+          "45806": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45806-ffe9859ccd887a316a0682b3acbcaed1448f9ef461a39e4ee8c6e712a3bbcef2.webp",
+        
+          
+          "45812": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45812-16962083b26a8d8ae4c3fdcd937ecdfb00cfbd6e997bae339770cd5cc6305669.webp",
+        
+          
+          "45816": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45816-3ea3832d1cb5eb6340552b7c9b9251a5760594c8d706f1b97936560d3b0f0f21.webp",
+        
+          
+          "45829": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45829-87b13d661b92edd99af3cbf3d92a8639cad83b473cb6d0a4ac3c6e3da4081202.webp",
+        
+          
+          "45902": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45902-30f1dbf1645b46974cf0fa13f25fb385a89b23075e8d5f6cf2de34f006775f5b.webp",
+        
+          
+          "45903": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45903-2e7091f664e587b995837802a7d3fcc84b12b8cbbe101c079177ee6fa4fa0fb1.webp",
+        
+          
+          "45904": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45904-1b96c12d3f05acee4cbf7c61451e648026ea0290488b513b9bda28c2da581fb1.webp",
+        
+          
+          "45906": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45906-c887d205f0fa3c81957f11b9969a027359695e485162efe72cf9808bb6742a08.webp",
+        
+          
+          "45907": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45907-87b4f134f0b80ac26e423d4cddab7645f6517c1511a1c619035836d1f5c3c2e0.webp",
+        
+          
+          "45912": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45912-7ef87e6a60f8a9b895c7c0a01025be0cfae2001b4761417889263bad79f8b7a2.webp",
+        
+          
+          "45914": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45914-89e0063fcd305f73993ab16458250e991c4d2d6a8db16296b5f7115e0f1925d4.webp",
+        
+          
+          "45918": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45918-151f8b8aa204b83b31290991c839ae6fa0ee5b85d7595893472957f621ebb68d.webp",
+        
+          
+          "45924": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45924-279253578bbfa458727c311422cd99f8c9c5ea5ae418fdf88af43d54ae7a0bc4.webp",
+        
+          
+          "45942": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/45942-63718d27e96977ac9ec6e74aa46f1080e465d0e383bdebbe5b88ee4e57a148e0.webp",
+        
+          
+          "46002-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46002-K-15cd99df8869edbc1edb2571e5446a57b603052b638e9fa9e90fd0f2431ccde8.webp",
+        
+          
+          "46008-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46008-K-16f2a02247aa74eee68cf956761dfc8eaf011bff6f315b4cd2e0d62511340661.webp",
+        
+          
+          "46009-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46009-K-0439f37705c08b8f010f0932bc735527433bc51990f97fba94ff52a5f31a854e.webp",
+        
+          
+          "46010": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46010-40a73d7f909883a4e186af113379f836894370302884de17689614fdafc0b789.webp",
+        
+          
+          "46012": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46012-3f5a0a82930957d604af5a884694b2e1387485a03e95417507ef24b5bf90b29f.webp",
+        
+          
+          "46015-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46015-K-5cda96987341e7b8e9e82204ba6a412082afaa3cc6a48255b1f6b5f05fd6b856.webp",
+        
+          
+          "46016-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46016-K-be556c6ac869aee0e46d48e8b354d7ec60ca9dade946b788b060e5ba1606497a.webp",
+        
+          
+          "46017-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46017-K-9a3d3af4b0e151aaca8c7306b6fe7ca18489663b2f2eabd808b71c0f980f270a.webp",
+        
+          
+          "46018-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46018-K-60c8b3d602486ff2687dd72376178cb0ae3aa5e8db3cc787e968668c13a35f36.webp",
+        
+          
+          "46025-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46025-K-8c4ba4e0f5f6442d1d772ed1820526b90d0b62333ce3f7d737c9e8d223540ba3.webp",
+        
+          
+          "46027-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46027-K-0254db42b2b30c6242af73b4e729678b7cfe9bb81ce512051db69a6189c8d5ed.webp",
+        
+          
+          "46032": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46032-445c922f445210079a99f6ac4bab727a21321408919de26a9977c3bc2aae3ec2.webp",
+        
+          
+          "46052-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46052-K-22728785cc85a2dd624c2b4e6b7635cb3341f95234943aad4d6824c2d07c3173.webp",
+        
+          
+          "46090": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46090-2420c8a5c543fdfa78e2421f896dd1d7a40afc7c1b323b68caa75f738994153d.webp",
+        
+          
+          "46094-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46094-K-62db766e5774b7688a81da5fb97577079b6d760ce77675225e0b8f0b0cc7359a.webp",
+        
+          
+          "46094": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46094-9da007e5b13796e3fcb6785ec11272cd25ce9d5c1df2fa05c1b45d9851bb548f.webp",
+        
+          
+          "46100-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46100-K-e08bc8113643d2746246136c8739e94265a607b8381320d5470533fcc0c0aff4.webp",
+        
+          
+          "46100": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46100-664cf1ba417943e8694c6a2a0f4b18290b215cfe170ced88b18fbae240220e74.webp",
+        
+          
+          "46102-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46102-K-edcc07bb70b6f95d6437305b3f2d7d7e7fed84316b25b441e0049024ab016446.webp",
+        
+          
+          "46102": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46102-a9415394d6b073aee2e500071b2a1b8005ae0da8cdc531594d22835018caf2c9.webp",
+        
+          
+          "46106-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46106-K-c43bb361f4dc723f259ea9652adaf09fe2c293677bbb289d906dc419071fd87d.webp",
+        
+          
+          "46106": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46106-2f4b7076f24e72ef5be1c0ba9ec0ea763616a6eaa7cbeb8d265eae6472760e3f.webp",
+        
+          
+          "46116-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46116-K-652b6187375a36196d0212b44e17196a65221b94bbe3cf98ffcd9c41c61fb53e.webp",
+        
+          
+          "46116": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46116-3574031767064d975cc088e7a7e013bea143746393a7bf55c4a68b01c29fbac2.webp",
+        
+          
+          "46127-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46127-K-a7ec86d09f38549400297c57f08a3aad77fc67433616d2e3d66b2e4e3ffdf501.webp",
+        
+          
+          "46127": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46127-9d9ce0638a8d46bd7f6f6eb9a0c8b00f5c7e5fd5011dd883feb8073af3e7f70a.webp",
+        
+          
+          "46140": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46140-0450cb5dca66cb700e264e26cec93024f1e628102ad69ffc4f325aee29ac5f21.webp",
+        
+          
+          "46155-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46155-K-f350922526163d92813272c8713a99f15c680aa4fd3116fa3e95ae6a7918b8b1.webp",
+        
+          
+          "46170-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46170-K-e7b70202b40b410504ef46204fb3333380d4e2b9f15de02cdab48d5f4ee6e1f5.webp",
+        
+          
+          "46170": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46170-f39f26dc1d93781e862dc320ad31d92af4ccb761925fa6eb7a0936f20b9ea6ba.webp",
+        
+          
+          "46171-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46171-K-05b748422bec1ca16de78e8074352fde017b6ab86b0eaad836f5766040c07de9.webp",
+        
+          
+          "46172": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46172-cf405f5813d176d7a99de887cab2b69c336e6ce0f816c1f118f3b7f321c9b561.webp",
+        
+          
+          "46175-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46175-K-7ff12cb38911e7c33abb0617441eb3723a3255ff1cce7594576bbe6dc25b2ad0.webp",
+        
+          
+          "46176-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46176-K-c457ec93f9082ae7cf48e2131e45c8114695021b8551ace15832bd11fff0d728.webp",
+        
+          
+          "46176": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46176-c457ec93f9082ae7cf48e2131e45c8114695021b8551ace15832bd11fff0d728.webp",
+        
+          
+          "46177-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46177-K-054e2080b1da496cf8c00d8756ad8c7472d47abee1a6b13f296f4ab9c67e38c6.webp",
+        
+          
+          "46180-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46180-K-d94c6ab2eaa8bf1670fc7883e4a7b4278bf6ab91b20a475a1a10bc6ed9eeb498.webp",
+        
+          
+          "46180": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46180-cde8eb04155222b7321ae6a21cc72e9238c2563a9ee1a8600fe32dc69a6c83c4.webp",
+        
+          
+          "46182-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46182-K-ed25454d24e0419076aba72dc4f057cb56be9338f452a86a77b9246dd5088fec.webp",
+        
+          
+          "46182": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46182-bad96d0de2c8909031f46ee714894a6688d8645e07924833ccbc7963c3b04e4b.webp",
+        
+          
+          "46185-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46185-K-06871f346d5e6ae02dad88dae4e60ef0e8d66293f5d8727a2dead16f554f8d68.webp",
+        
+          
+          "46188": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46188-0d9026689cb82f51da5f80702bbf82c05d011c39df833d7c72012366eed6d581.webp",
+        
+          
+          "46199-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46199-K-447a116d611509ed5e2cfeb3be12240e7f735c4a1b332c253a7436ca48ae52bd.webp",
+        
+          
+          "46200-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46200-K-1e3d73ce2e1f2cdef678980c34109deb5f8fc800ca6aab53d5d83dea48e9a262.webp",
+        
+          
+          "46200": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46200-4ece0f941b680d09702e3650fed7932207c833b13c4032c39cec11e1565dfbf4.webp",
+        
+          
+          "46201-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46201-K-882bf844de1454a38dbc2b5e963435e0670e505e295aecf1fe956523556361c8.webp",
+        
+          
+          "46201": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46201-caece1d09927a9b25fe7080a90b4dd1d84de05916262dbd00e17e2be974eb89b.webp",
+        
+          
+          "46202-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46202-K-ba1593587e8d94dc343c9dfe66afa92deac2df1c9cbd7412ba6069bb97d066dc.webp",
+        
+          
+          "46202": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46202-a5aa0938922b3ab7ac8beb7b70e7de0f064661e7cf7975bba5bc03bdfe147f9e.webp",
+        
+          
+          "46203-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46203-K-85281668b8e100a550c3fbc02fccfa19e23e2694cf3598a0a682527bb4e36445.webp",
+        
+          
+          "46206-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46206-K-53f48398f0fa1ab475a63dbb7d909c571c3a341f545fef7884ebaadec9b4b97f.webp",
+        
+          
+          "46206": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46206-237640384582f9fffec4f4b82c7c67b7ee51a391bac3ea9b3e865ecb3574cd6a.webp",
+        
+          
+          "46225-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46225-K-e7aa154b6389e5027841052caddfa103481f806a542ebb1f9e4ca14b92c7c057.webp",
+        
+          
+          "46225": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46225-fcd0ef237639037094b129aa16882d990af1ef98b39326da7f2a3c30ef5e4d60.webp",
+        
+          
+          "46227-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46227-K-b443a67a0014b4de44460b265c61e069691ddc7f3b2381fe0c55340de54a31f9.webp",
+        
+          
+          "46227": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46227-b443a67a0014b4de44460b265c61e069691ddc7f3b2381fe0c55340de54a31f9.webp",
+        
+          
+          "46229-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46229-K-8ca2321d92068e4985bd53617fc0dc953d86ef50d93cbe6eb96d1343ac95c6fd.webp",
+        
+          
+          "46229": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46229-39e7bef6adb1b3adce36e2e52db19b192f39a71cecda5d9e2f5af27b97653938.webp",
+        
+          
+          "46231": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46231-9d021e57a792df99d04f6623baaf25234c46a9a28db21f6fc2f34599a0987003.webp",
+        
+          
+          "46237-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46237-K-8a30e25e80d104bf83c4de73ec9b42196eacc4a02563f2a0557d4c3281e725ca.webp",
+        
+          
+          "46237": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46237-8a30e25e80d104bf83c4de73ec9b42196eacc4a02563f2a0557d4c3281e725ca.webp",
+        
+          
+          "46248-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46248-K-3d33074e78f0e5d9b03d80eef321e718247cf3ede421ea0e7a78e9e2d8a1c7da.webp",
+        
+          
+          "46248": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46248-d2637fee843f95139b41b0f737aba64d260177d776787c197e06f08253c78679.webp",
+        
+          
+          "46254": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46254-455e8fa59d54112a02d35ad66ce8cd7c7eb45816020bab2830a59828eb4c7927.webp",
+        
+          
+          "46260-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46260-K-df7981b1a41592c7e3aef12ab3d57998c83ddba1c810f79aa53c696ba14dcb8a.webp",
+        
+          
+          "46260": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46260-b34368f7a310db4a2790d189dbafe8761b941f7bb1d83f2d0785b41ee0b17d21.webp",
+        
+          
+          "46261": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46261-de6a9f9c78148bb03fedaff32c6bbb63b2c1dad8edc52660d1da3b8ae28336ab.webp",
+        
+          
+          "46264-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46264-K-193eab01c7362956b824567439e875907f274f2d678de6a022b5047efaa9d3fa.webp",
+        
+          
+          "46269-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46269-K-ae10aa9383874d1f737e810e8a7eefe8cf4b382eb589f2f0b618c25b2b3cff12.webp",
+        
+          
+          "46269": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46269-c7c4b575b1dc3074f0ca806e523d34e4b5e1ca9fc8636656edd2804c61a78bc0.webp",
+        
+          
+          "46270-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46270-K-7bdf702ba9ae02ff3d8aa4ae2d16ff4e6a21ca784879224bb6d27b3422196dca.webp",
+        
+          
+          "46270": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46270-b0fb4617e97abd48664daa5978634f305e27f219fdfe88cf384bc6a56b611b85.webp",
+        
+          
+          "46272-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46272-K-0c0d6d7ba4037d33b31188accba17732d9cf27407c27bf74e66148c8628bcbb5.webp",
+        
+          
+          "46278": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46278-b90f81e0305efa1084820d366ab6849a9910addbdb0948b53d2ac5756aed5a4a.webp",
+        
+          
+          "46290-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46290-K-ea8c19d083781f60cfef2b5aa07376e3a7f67198296a36a34c47630772469975.webp",
+        
+          
+          "46290-U": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46290-U-20dce0d72beaf385e60821079d467fc88b0829424e1029da197ef7feb18c4ded.webp",
+        
+          
+          "46290": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46290-d207fe769394be2d9e3276f2f1fe713c1853776b9b4e902eccb89dd7af1bff64.webp",
+        
+          
+          "46292-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46292-K-4833f484693531dcd474e498e71667e69de27e626712f8723b4c63e0f2a0771d.webp",
+        
+          
+          "46292": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46292-0b3b5ff2a6bd9031fdac2ba3a2fdf87cd0d41ad01dd1245649cc991fa0d8c77a.webp",
+        
+          
+          "46294-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46294-K-62211855fd8b37bdfd1f1e207325595b4b420565ad9048a87435d47cbc70251e.webp",
+        
+          
+          "46294": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46294-0b07673350eed0d46841059f32b331876f4434b309d40f7ec7fd5c35a7530f1d.webp",
+        
+          
+          "46295": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46295-90d4f744822f115c3da1b0e523b1eac7cf3e6fade1e06d3fd0def47324bba4f9.webp",
+        
+          
+          "46299": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46299-1e5f062de76164b395cbfa7d526b62ed8a78551ce299c5f913bd1e25b0a70eeb.webp",
+        
+          
+          "46302": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46302-0d9546d6e2e530e3df68921e1861bff825b54a24ef8deea32d730c8eb2e2c000.webp",
+        
+          
+          "46315-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46315-K-5850b9b8e676671c351f2116228419fab02d6967cae580a176f0e28ff07163fe.webp",
+        
+          
+          "46315": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46315-deb6cd2dd28c6b7c87a1293ccbf71a5f557b0a872d567cc23e651a05f4ffaaee.webp",
+        
+          
+          "46320-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46320-K-94cdf94195c049d2e8368ec9636b6798f4850934471424d9b7f0e0c80863eb6b.webp",
+        
+          
+          "46321-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46321-K-4f0c15fdbd52318a933a07b95fa7babb3ec2d92641aa55c8c6837bfd65f3a8c8.webp",
+        
+          
+          "46341-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46341-K-71f62e07f0175ac8960f27d05a37e1087e76ff9f191581deb65f330a2c4f11ec.webp",
+        
+          
+          "46341": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46341-c5aa852484ccebebf14c86fe014fcb6e2a13a077222d7c9dbaa38797e4eb850c.webp",
+        
+          
+          "46348-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46348-K-18c2591e469bfec18833e88458fb91c05d3157c2ba0ea641f0e65a19109b62d8.webp",
+        
+          
+          "46348": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46348-f7c4ddb0d530b5d95b9511a5aa6f634cfc49b1c59ff48dc62f696531a3bce434.webp",
+        
+          
+          "46350-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46350-K-e67cc8e276d6b1a69dcc42feb5e92e1e94237c42b035c9bbee4bca9c1b1c211f.webp",
+        
+          
+          "46350": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46350-e326b67353be54d50df0b25f1bc704e6edcf8e457b277ee7d468c685832aff7a.webp",
+        
+          
+          "46367-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46367-K-9b4fe11150132966a372cd85360f8d8221690027b5ca59360ecd85baf7698b18.webp",
+        
+          
+          "46367": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46367-3d4208f70791175d048de167e29eef2b2ea18975e01705743dc67fc304c67ea4.webp",
+        
+          
+          "46369-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46369-K-fec8cfd599f43b82fda0e8c9196eec4ff905b54e7ea4c670614c1e9743feccb5.webp",
+        
+          
+          "46369": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46369-d175fb26e856795a6ac7b6ff46bbad6646c67608b2180e728e5028a30cba8146.webp",
+        
+          
+          "46373-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46373-K-b2153585352247bdf17754fd0f33bb6708ce5444e13ff1395b01cf9665fc8ccc.webp",
+        
+          
+          "46373": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46373-a6771e05198ab03f59cd078f44e7e7d059d53321851748446d05487c38619f15.webp",
+        
+          
+          "46374": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46374-915baa9b075f906bce7d56281e3590cf4cdac1b970bc578dc7543cb5bfa9a0b4.webp",
+        
+          
+          "46376-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46376-K-a4505d4b3b53d139572cb850523f5b7138985db5cbb1ccd4af798c213c734327.webp",
+        
+          
+          "46376": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46376-25f3a09a307fc03df6f7953fac137c7598a16d67dd836bdeab8e10a7aadaf6fe.webp",
+        
+          
+          "46380-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46380-K-e70339b73cf56e00108d05199f50a1d820baa55d4f2984948f175e6f4f6ad47c.webp",
+        
+          
+          "46380": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46380-e932fdcbab3674634b2b9401071bf3d27d3520376dca93e189206b65582d57aa.webp",
+        
+          
+          "46384-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46384-K-ee4faceff0bdf5e0f77e3e6153fb4c4023025e7567ce2cabc292349e5831b794.webp",
+        
+          
+          "46384": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46384-aae653d5dc8088c5246feb42d35acb1d225cf2e5b8f0aea31ffaa61187dba127.webp",
+        
+          
+          "46390": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46390-6e478809deb3ed682d92cf28be4b3b0166391b9bbb2fda904a4ae79830aec36e.webp",
+        
+          
+          "46399-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46399-K-9a9bf13601684817f63eace7fff4ef5c5e96e9fbb6677c9ce38861595d77b48b.webp",
+        
+          
+          "46403-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46403-K-86c3d2ae8a3eb62b5adbce5ba6790a130d7fefb6451c4f2c657b1914c97b1a59.webp",
+        
+          
+          "46403": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46403-4a6431be327997aff62c2b3f36bf8068c12769cac67acfa48114833df9fd6e1d.webp",
+        
+          
+          "46413": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46413-6e71accec0cfca9f6013be75c41674945e99b970a435d1abd64bdd94739d916e.webp",
+        
+          
+          "46415-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46415-K-08a4a8ea3ed316ff92c7fa25aa2359ffb49f51aa474b35862355634bf4c5db7d.webp",
+        
+          
+          "46415": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46415-4918bb1e58910b9db6a20f7c431237462adb9eb4867ac520de6d2b58bccd2aa5.webp",
+        
+          
+          "46416-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46416-K-b6e4bf3e80a8957d4b8d7bb98a1365985fd7a013f4830ed2b2016d73a9615f48.webp",
+        
+          
+          "46420-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46420-K-48c6e5c6b7cb5121b69bdd1f469ee34a1278e23a2451855ca66b490faaff32b8.webp",
+        
+          
+          "46420": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46420-64f3b8d283a68d99447a223e8497521a707e3f6fc23788cef9f0e3d7cac52d80.webp",
+        
+          
+          "46421-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46421-K-4b7f9d140cb0bc0887dbfa157dfb11aa7d373d3e47a1892fc3daa59b74f4f122.webp",
+        
+          
+          "46424-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46424-K-2d14dad65fd123ccf0dc8d089a9d93b565aa7dc9e313be468b93a2726b429045.webp",
+        
+          
+          "46424": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46424-13d8132f3edf92c0419ef0c6c5a7c8628502b23847fe20ad66fcce46c081e62d.webp",
+        
+          
+          "46426-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46426-K-57cf0029d3649ee0f06b8f381486af5f7842c88f91371bd70c4d14fb07e0b70c.webp",
+        
+          
+          "46426": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46426-17fe4bce1e2fefe895297ae9c4c4ebc95493e58638a5180bff3e016108b48b07.webp",
+        
+          
+          "46428": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46428-c2b9fec2a97896e733b5afb265b1acb4d0a06bf8243442d78d69118ad06a61e4.webp",
+        
+          
+          "46438": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46438-9e7f54a94fb5840d50dac7bdd119a0d05bfc9e61e4572c4e116d332b4c777a18.webp",
+        
+          
+          "46448-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46448-K-a4df6757f8dc0c79f5f0f6f1480b24b19fb7b12a533c6f8f8ea2812d374be20e.webp",
+        
+          
+          "46453": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46453-e44ac33dc9814328b91277bec6c89655fbbaf5b57422d09529a5c6f2db7a26d4.webp",
+        
+          
+          "46456": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46456-46e33405f7b8e517b9f9e7010825fe3d0ab909e410998ce8784c2dfda9d400fb.webp",
+        
+          
+          "46462": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46462-0822766c16405af1bbcc59c498580b78624d227679e47dfee466c05378e4654c.webp",
+        
+          
+          "46479": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46479-6245b5cedb62b716a4bdd5eb7abf5ae2f3cbf7d6403ac4f95c5e56febc817d02.webp",
+        
+          
+          "46490-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46490-K-42685c04b1109a7467ff57042d1e8e7868997beedd5e9bd7f177d04245355229.webp",
+        
+          
+          "46490": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46490-f2362aad89c556ce1c8a9e1fc8bfff6a74cc936c4aefff65a57759e61a3135be.webp",
+        
+          
+          "46493": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46493-1885c8eb4bab98f28542aeb8f7400ae176fbb9af8871df7ce00c42cd54ebeae5.webp",
+        
+          
+          "46494": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46494-690ec381d43fa92c3b0b953934056e12e1414e92cd89a23636d175ab813e3afb.webp",
+        
+          
+          "46495": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46495-4483fcf2b74f3fee6792f7392a4ee10ad19913ca78dac94a5c46367baf5d1b86.webp",
+        
+          
+          "46496": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46496-d745aa53eb8a9efe13a632e175458d9a82c8176b1363bb3725df314ea8fb9a4e.webp",
+        
+          
+          "46564": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46564-a8baf612a12da691d790751f44d6282da251a4c5cb459e0dd3446cdf560fed5f.webp",
+        
+          
+          "46566-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46566-K-cc3a026cbe47dfb8a1ab6f353e80118d23f621184a046f87722a8a213ee91f7f.webp",
+        
+          
+          "46566": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46566-8a91c95252929727fb6830742249e2b20245fbf67d453e539aa589d96dc956de.webp",
+        
+          
+          "46570": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46570-24af351b449ae1a5d0feb4d527d8e76d636a4466235f6427d9ae69d1fc0ee860.webp",
+        
+          
+          "46574": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46574-4f84937474350be1582c9a340d3ef132337ce32ebcfd39204cadea2a31cca74b.webp",
+        
+          
+          "46577": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46577-0645586291c135889ad7db5b36dfe67594d9898bbb9c0027298f216ec49ad421.webp",
+        
+          
+          "46578": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46578-342e9e40838513cd3923faddff378349c1e425407620ec59ee5785249a6d2873.webp",
+        
+          
+          "46579": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46579-6c1f1c95275ac6569a7cc93bb27440d2fd73b0064132d3cf446d04d82ad895df.webp",
+        
+          
+          "46584": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46584-7adedb065ddf6330f5f9afa5db0b61c838430555b672ec32a89b601fec404e35.webp",
+        
+          
+          "46586-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46586-K-d52162c51ca872a9aa91a67f72c95e23a4a13fffc43198edad4e9869f730a54d.webp",
+        
+          
+          "46587-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46587-K-19c6dc86e60341d74e27c9fe0e563d4722bf5e7389dc15b1e21a29e733167d77.webp",
+        
+          
+          "46590": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46590-9e728391d7a5290ea591a5d2e8a3946ba2bcec33e7840e85ac65d41e34f2a7ea.webp",
+        
+          
+          "46596": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46596-b4ac3578672430dab9081e2f8eeb69052d9a07afe00ac975a46f18f8a2911ab2.webp",
+        
+          
+          "46700-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46700-K-ba305ddb40fd4203798f5923bf2adc9e69e19e44601689691fe9a30490cafa9a.webp",
+        
+          
+          "46704-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/46704-K-5a44b141fc1bc4d90bf6a5076c7e4e230399c2cdbced89f1fb7bf3191915222f.webp",
+        
+          
+          "48050-E": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48050-E-4f66b7872d168004596247f06bed61fb7a0cb37af8bae46802cf8682ea30486a.webp",
+        
+          
+          "48055-E": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48055-E-bcba7ab5aa78f888940eeba68c84894de71d36bbeb21931fd4782ebe46f003f7.webp",
+        
+          
+          "48058-E": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48058-E-f9a5d1e1e91656ce7e81d1aad41176a046623da03dca9cecf8e81bf69faa04f6.webp",
+        
+          
+          "48116-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48116-K-cb1c7731c41419c91fecc42bce1aab81f50d9a209adce0c99ba6f4acf59f4260.webp",
+        
+          
+          "48118-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48118-K-06f90d6f86d9b91c4400ec8c7284e00bcaca23da6fc1a51286bb5d3c3d28528b.webp",
+        
+          
+          "48120-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48120-K-9254d0f13cb274c9b69d4b6bc1c83c08669d7871c7facd49fe467733a254f931.webp",
+        
+          
+          "48210-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48210-K-8487bea43ece82a34136ec34af79e5dcc228f8d026f9f5f6f082eed4ddd12277.webp",
+        
+          
+          "48214-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48214-K-63005026f012fc9197526f96efa7b56721954101540c26cfc2dc84b813944776.webp",
+        
+          
+          "48216-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48216-K-6eeea7aada51c8857146fb0883edb31e03196579a48e96902f7609962baf153f.webp",
+        
+          
+          "48218-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48218-K-8825bda881b2e227e8b0af4453f8f5aec39a9c8d96aba4524c82239cfabf2d2f.webp",
+        
+          
+          "48220-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48220-K-e9bc36f855c5b79ad8c68fc1a109a306a41eeb340e8dd0d7439c2010999f6936.webp",
+        
+          
+          "48302-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48302-K-004f84eead155f702b157ccb5e86732ad4b1783d9db3c956192e9b488f7e9907.webp",
+        
+          
+          "48304-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48304-K-f93e4e7c3c1a536e88f2a94866025a60db9530782316f612f1d244a3b3520fb4.webp",
+        
+          
+          "48308-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48308-K-c5092fec7bf21614e2748a54cf6a000c3f3c928afb87730ead7c5f67bcac299e.webp",
+        
+          
+          "48314-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48314-K-e3c799fe877ebd7c774c537d21327e2d199a111884cace32b6dcad8ceaa30b29.webp",
+        
+          
+          "48403-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48403-K-861a2c38d341489c0452dad6406de8b4f40617f372e63470a543bf48d826953d.webp",
+        
+          
+          "48430-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48430-K-36481335e2fc6bca0de3f13fdbae91ba05e2ae586dfaf7a458d0d18161c337b5.webp",
+        
+          
+          "48442-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48442-K-ce8c509f25731c9d7ad008bd0612c03f52c6899bd8d2f0f39002d1007d335171.webp",
+        
+          
+          "48444-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48444-K-0b49e2dca5ac4fc5217f02fe8253fd687bc86d86919b22ceed14bcd213bb377d.webp",
+        
+          
+          "48450-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/48450-K-12fe9b26e4faf5c548b2320a2ec2d81b1d894652650c8c8f32135261cd248cc5.webp",
+        
+          
+          "51370": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51370-b5e419f770a89f6b8ea33deaf3ad97b9c1bbafd479ae27052107908ff7398cdf.webp",
+        
+          
+          "51371": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51371-ece7c0976fce4a77aab7219a63f45c64b61890cfe00b53492725dd92a40151c6.webp",
+        
+          
+          "51372-Z": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51372-Z-559f6764314d48027d76d87b6b67e06972e5880b7945cfecc493ea9f66e59cbb.webp",
+        
+          
+          "51373": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51373-7670ec85f09f8e247ef05b7eb88f98fa36b4150e1ba007e077505427e161a1d7.webp",
+        
+          
+          "51377-Z": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51377-Z-a18672201b5a5299064cf24c4faf168a556c1801af5b956a2b951cbe5d97fc72.webp",
+        
+          
+          "51377": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51377-95b6636b76a2e276e858791480325e62b92368b6984c992ab7ff7e7898f80cc2.webp",
+        
+          
+          "51402-Z": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51402-Z-41f0b82026b2b167304bb888708fd3b5343c5cdaab5b0057eccfb4932e8970b0.webp",
+        
+          
+          "51402": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51402-4e3a4389f33aa910c14893d5b3921aae5cfb22a822a7f3698c906128b83b1330.webp",
+        
+          
+          "51404-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51404-K-c1cc5f528defa9659cb63b2f1fdf41e57aab4eeaba3c54b438b65b85ce4d6de6.webp",
+        
+          
+          "51404": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51404-c0dc11b2a48aabc481f4e26320028e4b09d7f951151751b6be61267d64191e9f.webp",
+        
+          
+          "51405-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51405-K-9ab4c9499c946d0e40ab7b03a013ee9e7a753d38c76dec351005d71cfaeb27d0.webp",
+        
+          
+          "51405": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51405-bb013ea7e498db4a7760aae43d08e59dec68ce5423fbfc951c3dcd67dae90ecd.webp",
+        
+          
+          "51406-Z": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51406-Z-9072383f79e19681e8c550360d1d9784e1cd743e9a3b9fcd3a4d1a34b7012216.webp",
+        
+          
+          "51406": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51406-0d074cb6b0f07a530f87286999dc65274169133e6578cef2a149c78e55833fb6.webp",
+        
+          
+          "51408-Z": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51408-Z-b5b9fd673b54e705065701e4c398b161e4d0cfd59fa2fd90b6d10a39386b4c5b.webp",
+        
+          
+          "51408": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51408-1feaec478df85c04f349112db7c7cfb748d3f4582bf1582c8459172620f63ba2.webp",
+        
+          
+          "51410-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51410-K-16af3da4b3495ffee22fcd3bdc6af353e1c60be918282dd1052cd2d5f362230d.webp",
+        
+          
+          "51410": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51410-f7fe8deda56eb205531336af9922f56d0dd78c70c4e612f4eccc62efff9e1bd3.webp",
+        
+          
+          "51411-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51411-K-2ce9a9f1d8e73d142bc9481dc51b5143810b9a9afda861b56c8477806b645c02.webp",
+        
+          
+          "51411": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51411-fc90277a2981d8b37f23fc586f3f438592adeef587f464dedc49c01c688edd23.webp",
+        
+          
+          "51415-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51415-K-3c695367579554bf8c24025acc34693f3062e822c8f2cea0f1836440000f5003.webp",
+        
+          
+          "51415": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51415-5fd6d9dfaef6294114377748be28ce928df82ade08a32ab1237462456b0c1b9f.webp",
+        
+          
+          "51417-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51417-K-da417a8e810a147d6b66577b0f007f0c38fb9a07e297ba6a42339667a9662cd1.webp",
+        
+          
+          "51417": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51417-5c0f10ed82225b1bc4724cb93655b0dd0be22546bb68df0bb243d2489e6ceb21.webp",
+        
+          
+          "51437-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51437-K-73753de5e35ce7b254cefc185c0897d2a3068aa20e106c74a218638bef936b33.webp",
+        
+          
+          "51441-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51441-K-b534eac7a40ce63734df5fec0664a3c0c96f5e2a23196e18ce6a671808bbf811.webp",
+        
+          
+          "51441": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51441-a91e0f312095168793a2694c2aca683739d28520f5c48d023dbd40187ca435e9.webp",
+        
+          
+          "51444-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51444-K-cef82d8dc7b66eee6c18d03b597a77797703c35e94d5b1689eae6d8cf1b7ec55.webp",
+        
+          
+          "51444": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51444-383081ca4881b003283e2757076b292714c6a20c6b8803a6300ee51a53d72295.webp",
+        
+          
+          "51446-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51446-K-46d040c9fcb647082b54b6d27c1438774ad6093dc37ce32fc59a8a1ff30fb138.webp",
+        
+          
+          "51446": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51446-81279544a9abd3a1ac2a3827b56daeb96fe418612a599b0ea3418b8b5b332f2d.webp",
+        
+          
+          "51454-Z": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51454-Z-08c85de097856c314fecce5392c0ffd93e07773486b54b2a2af7cf3e7bd2201b.webp",
+        
+          
+          "51454": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51454-02a6f752e660a2e40b06c6b7a2bac49d3baa3fde94d5300d4a8f0e3db85fcd92.webp",
+        
+          
+          "51458-Z": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51458-Z-44d7518359c08f88af46834f77ba3cb99e5d3508b8d667f27417bebafd9efc38.webp",
+        
+          
+          "51460": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51460-6ce7dc1d6423dfbe66157ba1a849bcccb96fa2d08cf4d48b351ef8ee2c745508.webp",
+        
+          
+          "51461": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51461-26c1b18500ec4d2fa9ac7187ce68873db2dcff65e8b1746ac612ef0b12d1326e.webp",
+        
+          
+          "51462": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51462-f13614f6de7e55f580a7ae99e25d69b23a78e37e09bed473d102d6d58f56a9f3.webp",
+        
+          
+          "51464": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51464-79ddd6a190f21cbdb9a3f8ef2f1e9d0543d136d2d4342185b064b158c8398ee9.webp",
+        
+          
+          "51470-Z": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51470-Z-38bb89942283fa3121b3ed1af09ca20d74260de95c976c5eb6895ce62647a5ee.webp",
+        
+          
+          "51470": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51470-12dcb1d53d95df003b82f7ab901f13d245aa5eb20058d85c48d3e821c03ec611.webp",
+        
+          
+          "51474-Z": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51474-Z-f3c896cd5f130369129c0f0a29527cfae3ec8c6fcec9bbdf4f917907e9037b64.webp",
+        
+          
+          "51474": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51474-722f0a59fa8a73f209e40a5ce329b3d195c7b3a1c3a7df58edcf1954e5b79ad5.webp",
+        
+          
+          "51475": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51475-20f66008ed65ae551381622dc91c211736afe84d46cec73f397e184bf8b382bd.webp",
+        
+          
+          "51480-Z": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51480-Z-505d430d5f118d9c05abd307ed6c31b6483713e6541c4e566707513babedff56.webp",
+        
+          
+          "51480": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51480-aeeeccdf1391fcf92d9a7d0da27a705f5593a480cb998df4eaaa3916f92b0ebe.webp",
+        
+          
+          "51481-Z": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51481-Z-ea9c3cc7551dd0aafcfed30745018fa7f1d7fb97d4be6aecd17edf1826866d7f.webp",
+        
+          
+          "51481": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51481-2571bc336966abdeea5839307c42614a4b6e394380082d9ff090d043cd19fc89.webp",
+        
+          
+          "51486-Z": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51486-Z-d2ab03ea00593c24cb69e3ceafb7fc5576ea72db259f6877f5a010945ad2c503.webp",
+        
+          
+          "51486": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51486-f83a0af4e30577382825b81418c845daa6da20a6af0e4a8630d01123447f0820.webp",
+        
+          
+          "51489": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51489-d2c2820380392171bff64b36d4056e842d88fd11366d659c0787334e8ae1589c.webp",
+        
+          
+          "51490": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51490-42aa71c5dfddb8b947a14c9d19186a4cb8ea2236c2896dcfa1462acf327a4c8d.webp",
+        
+          
+          "51491": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51491-e6b41c1c58ec7df0707437dae0886f25c2fa4788f7d0eea279b6f59730ae978c.webp",
+        
+          
+          "51492": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51492-c9084b035099005eee652e889bbfe09fc6a5b6ca6708072c949bdeecf78c24ae.webp",
+        
+          
+          "51494": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51494-ab22c7b9c7742e1ac6597d434050c1d65a9853ab0de55296dbbfee1f8325ff14.webp",
+        
+          
+          "51495": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51495-21c6799482af7a2efb80640f151c60a5a18f96c9ee7450789b4b31c7d54a92e1.webp",
+        
+          
+          "51496": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51496-b793c47def0ba3cbf8d420da57b78962925fa7261a6dae67d77f96109a73f42e.webp",
+        
+          
+          "51497": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51497-e8d9f285503bc6b3d6bbf2670eaddfdc5be191b30d54890948720cde77e4d49f.webp",
+        
+          
+          "51498": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51498-171775f6a803e2597f7128a6f94ba9ff6248ae2601c39e086479eaca15df3cba.webp",
+        
+          
+          "51502-Z": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51502-Z-02d280e6ae6964e31c17b7b654ddf6b0c901f9d3a8f6c7c360fed7bfed992504.webp",
+        
+          
+          "51504-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51504-K-18407766de0773834efd3a88bdb874056afa0163404180a84e549c68eed8ab37.webp",
+        
+          
+          "51504": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51504-b905b48e5296198d928d91fd2a5ddcb23d796e3ceac17aae4018d8b5b0cd46b4.webp",
+        
+          
+          "51511-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51511-K-f3dcb96632106853ed6c8f48c3312cd9c416367a93e0fcc99322231ee25fce81.webp",
+        
+          
+          "51511": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51511-50af809096e2ae275319497fda77b8fd9e9c3cbb210ad0e2cb4d104215c0dab1.webp",
+        
+          
+          "51517-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51517-K-d84ccfcff2eb53ddd48cb9b7de6ef405e0a9d9c8ea2c143354eb29b236ff3374.webp",
+        
+          
+          "51517": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51517-e9c869d884e3e0708bf8ce0464e644c1176dbbf994b445bb51a0c1dc0fa0b4a1.webp",
+        
+          
+          "51593": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51593-fe1fea9f98b5ced677cc66eb4fd6ae175dea50c1be6be176ebe7cdad438af593.webp",
+        
+          
+          "51595": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51595-16f3ce7ca072a7f13348e788490078ade1f89759f817f11b040466ec3effca05.webp",
+        
+          
+          "51597": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51597-1a39678fe5235bd2a98921c4a7794d34a23a72662efe011115d9a4580024c65e.webp",
+        
+          
+          "51610": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51610-a145927cef078b3eb9151569172027057987b9b64a0e2322b6652f746f800a15.webp",
+        
+          
+          "51614": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51614-3e8762e58d2fef1772004990cb81b4aee4a9ca104e67ec6492efc63a4ada9e31.webp",
+        
+          
+          "51629-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51629-K-38f8c7647cf082f9573f6259f8a306be9d10b7c532eb98adfe67f80d88d5435c.webp",
+        
+          
+          "51634": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51634-c877678e47733e344ef386dd54b4234fba797f0f600d172e5040ac901d6cb172.webp",
+        
+          
+          "51647": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51647-015bbe819c3dfa189fea2cb9a34cb27be6f5b966053279668e8707d255c0055b.webp",
+        
+          
+          "51649-K": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51649-K-d70643410128392dd1a893adb054abace7d34fe68b1248e4729ab6e5fafa1563.webp",
+        
+          
+          "51731": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51731-05fec374812edd8600acc11b57b44ba950cb065455675baf87ec4c08765f1e2f.webp",
+        
+          
+          "51748": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51748-3aa69d597cd83298d2b4e24ac8c72e1cd3ab0eec9bb77a4472604d978cbc0432.webp",
+        
+          
+          "51775": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51775-b3f9e0354920a14ff161f7f353fb331a857b7f0786dfe04637d4e6d6148ea954.webp",
+        
+          
+          "51777-Z": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51777-Z-569eaa2608e5dc43ba5d798c8580d6730c12d1e222eb95fe4a3b909d8e4dee91.webp",
+        
+          
+          "51778-Z": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51778-Z-34a7a089079930d374e6e9f497d14a57a4c59af38d5566cb7609ec07868149a6.webp",
+        
+          
+          "51790": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51790-bae86e251ea74841d5b27ba4155e20b680146530a03245af7df76aa1291aafcf.webp",
+        
+          
+          "51792": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51792-c5977f45eef833b8a3b0a302d94ce96992b507ff3c9a9c13579adcba6f162dbb.webp",
+        
+          
+          "51810-Z": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51810-Z-4acd5e35c34a9187a0ddf7e821ea23305b16deb5a813685d71e3479b66e9da71.webp",
+        
+          
+          "51823": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51823-698d30eda042bd6c770ff045d226468d2edb016939e54864a6790834b9c3060f.webp",
+        
+          
+          "51852-Z": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/51852-Z-bfc6324f8b7898c331ad82f44be3f8eb57f9a7621fddc830df5ffcd9f0c16e63.webp",
+        
+          
+          "57300": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/57300-c12e19f4c18d5650bd29990f74a31aa4a35a9827d57c4a7ab9efe273cf4528c3.webp",
+        
+          
+          "57302": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/57302-963571333d0fa22a1083dae074c24701ef547cd0976ecdf83bc736fd560b2caa.webp",
+        
+          
+          "57305": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/57305-7d84e4d81bc4494c1159c112d621b06d255c9bb964c728f03bd450ac37ddb584.webp",
+        
+          
+          "57306": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/57306-bfd90d8c84d8314b1d3d12b7305a42cc6ac911d1fa2396fbf89457db6ffe5719.webp",
+        
+          
+          "57314": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/57314-1d92c701ef5695b78e7523bb79bc1ed44f598a2569b331c3a9198e6fe52c262f.webp",
+        
+          
+          "57319": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/57319-d28a46a81636fd739d6a868f0d5440d11c30d03427d5d38ea1ed93753aaac91a.webp",
+        
+          
+          "57321": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/57321-872ceead5e5e3d89d4421fef4afb1ef3cdbc917b453c8fa373223a9199b91ebb.webp",
+        
+          
+          "DRB-192": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/DRB-192-72e3f0d215535e5f05fcca30733ba3e435120844f90e41c88f9647fdf489091b.webp",
+        
+          
+          "DRB-200": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/DRB-200-59b4242c1947d79a14ac1988077a7434de41c59ce37e7bc659b69bd9e78babb1.webp",
+        
+          
+          "HSS1212": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/HSS1212-fca91b1f97efb1f41707ab407a965a6fafad20ac0e9f2d549073321c425399b9.webp",
+        
+          
+          "HSS1312": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/HSS1312-fc549f077319765f708ee3ed39f74d2318463ab5ca51ca34c6b6ff9af232e6c6.webp",
+        
+          
+          "HSS1500": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/HSS1500-2c4b66476c3657c54c3d61e84386d12cae0a7064c2625bcaf0d30689d69a5c05.webp",
+        
+          
+          "HSS1504": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/HSS1504-43f4f313ef80dedefb1e9dcc0c7b28a705d6cca585feb37f7640de7f066ea262.webp",
+        
+          
+          "HSS1605": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/HSS1605-7940248a2a98b05430dfd9ad05d76ed0f6d26ec8ac3aeda3980cd1b4d7703aa8.webp",
+        
+          
+          "HSS1620": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/HSS1620-92eacc458174c986a0d534a9acf316624ccb1bc8c4d2776144f696ac1fa62fd7.webp",
+        
+          
+          "HSS1622": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/HSS1622-1007a9aa99361f9c1f8a9a6437e487fe9dd3d3a72253ffa3b5147ca12e586877.webp",
+        
+          
+          "HSS1630": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/HSS1630-702068ddc83bdb1e2375c07c22bbb7f81ea5fa33e138751c4d7fb9217a2fe40b.webp",
+        
+          
+          "HSS1633": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/HSS1633-833bc73a297acb75a8871a9b0f9cb2557d893d285fe6599c63b7bb178247924b.webp",
+        
+          
+          "HSS1655": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/HSS1655-02be94734a4072f98f825386d4e8236adcde4449005eba8b738ed624d36ea76a.webp",
+        
+          
+          "RC-1028": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-1028-278a32cdc09a80cdeba971517b5296735f8a95f12fe018cefb9180bdff9d1982.webp",
+        
+          
+          "RC-1050": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-1050-df2b75bd5f1dbeb37e8c10150e5632dd07f67612d59b97a9e7ec613accc2ed79.webp",
+        
+          
+          "RC-1102": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-1102-47100dffb1abad180300a45f9f703e5d25ffd40a181698b9e40c1a349e130786.webp",
+        
+          
+          "RC-1104": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-1104-7cabb26e29c8451e5b15eed0a209be248de3b6bf6f42c13570869d5da3267ca0.webp",
+        
+          
+          "RC-1108": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-1108-148bdee216bfa83b5d14ff266696045fd97fe72911cdbeafa114d9d85ee14561.webp",
+        
+          
+          "RC-1140": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-1140-42b1642f80441a81760834209bec982de9c0c422f86491f05f6903f53956f606.webp",
+        
+          
+          "RC-1141": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-1141-5939f8f29d501a420a81bdfa955647dfd8cb4ef2091c705086ec806da4ef5862.webp",
+        
+          
+          "RC-1142": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-1142-90a483e86f4e426f909651a6b23e62229e282db40f28e50404031c94501dbb21.webp",
+        
+          
+          "RC-1145": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-1145-616541243494e07df24b2ae7676da0b32b4cb77b24b295a2a711aa2affccef07.webp",
+        
+          
+          "RC-1148-M": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-1148-M-8c8f615a441c8071c3ef3d1dd13a76ca54003aaef7d6c831e7c6ecd1cbea40db.webp",
+        
+          
+          "RC-1148": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-1148-46a611233b93d038ccf5b613908eb7dbf70e2dc5d20eb2e3235c8edcbcebb3e6.webp",
+        
+          
+          "RC-2241": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-2241-78115566c1326843681a2c5f199c09778ab8b9077a8c7bf42e5784b7fc8261f5.webp",
+        
+          
+          "RC-2243": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-2243-cb34c6e064ffda46080fc89170a89a6b5403574f0b2cc9ac530647c96decc401.webp",
+        
+          
+          "RC-2245": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-2245-2d174c3ae3b741e97dbcce5e052a82b93e2ecaf5fb3a1601ba1119bf5cde264c.webp",
+        
+          
+          "RC-2248": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-2248-2fd200926cee31346699d43f2da0ce7c3f2cab6e3435e04409efa8ef4fdebdbb.webp",
+        
+          
+          "RC-2249": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-2249-76d69681a3f4f5d86c29b75d93683be45f75d73fc6ef6ab858e80f5905f709e7.webp",
+        
+          
+          "RC-2251": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-2251-85c9d6edcaa445e5e3531fa481bbd55238cc53309122f5983cb3e0f44c1341c0.webp",
+        
+          
+          "RC-2253": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-2253-74b12c91eb083c736d622a2ae95c58ae543c2da2dc513c93ca29fcc89ce5bab6.webp",
+        
+          
+          "RC-2255": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-2255-6327348c7e212c69ed8b11d4b136fedd92d336b6355fdd5bb9e6be13573170ce.webp",
+        
+          
+          "RC-2257": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-2257-4c866c7f49fba3aa615683267f21eab56a09c97ab3caba4062c01dec354bde45.webp",
+        
+          
+          "RC-2259-TG": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-2259-TG-69f016881c0f13a18c0b6ae82a6eba3a3b5e49c0800d766ea7fcfe89e8ccdcbd.webp",
+        
+          
+          "RC-2259": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-2259-b77b8bf6b8dea874b9b1e1d8a7a783f8165f809beac9704d6fc6ac232e46a8bd.webp",
+        
+          
+          "RC-2263": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-2263-ab743ccc5e1a46f0697c633dc42551e2c4849777a14a032e84a95b1cb03f072b.webp",
+        
+          
+          "RC-2265": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-2265-3c554a984dc5118b5e66a4b9ebf8b581769863d3221c5b1fa06b4d5623b1840c.webp",
+        
+          
+          "RC-2267": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-2267-c535072e7504e0251135b4c4ca34b91b0acfc2c17067f446596b324635cec061.webp",
+        
+          
+          "RC-2383": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-2383-95a6f3f02777de77eac333dfe2f4ee79c33b310760d60d95dde3d4930047e8ed.webp",
+        
+          
+          "RC-3400": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-3400-767e0ca68d91b3cd1396e134cbb15c7597fc9765b0bc4bbdfc1e079757e9d9dc.webp",
+        
+          
+          "RC-45711-M": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-45711-M-12340d65c310c2646fc8b4d4c6ee9a880a1d30ec40e6e198e7a5bf763222f978.webp",
+        
+          
+          "RC-45711": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-45711-6085e15a130fd7d8979f59f59a4c9c447b8e9d11b0e7e9c7dab8a19add31da0d.webp",
+        
+          
+          "RC-45910": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RC-45910-1cd764884a8478793adc3323f82051f8d970d6e66fad107e2d3ba247a23990d3.webp",
+        
+          
+          "RCK-360": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RCK-360-16d018f87f824610fd8484805e8189fe4946db94ce6de27687b77914df02f899.webp",
+        
+          
+          "RCK-361": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RCK-361-a3615fd1d778d128dec8cd83d936b2d9155952967974b6e8a9b2fe8636695b22.webp",
+        
+          
+          "RCK-362": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RCK-362-d79eeccad84a8d8cd085f9c54aab06832c15212048c26907424894406827f528.webp",
+        
+          
+          "RCK-380": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/amana/RCK-380-dbc0078c1bc0935e53995c8e40e5f2b889d026feb023724850e98010947931e0.webp",
+        
+      },
+    
+      
+      bitsbits: {
+        
+          
+          "330-CM375": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/330-CM375-031fe468c8207126719800b7ef6c912f651cdf618f4e22b580c7cb309f365f17.webp",
+        
+          
+          "330-SRF375": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/330-SRF375-2735b8143be3522e46da26f26ea7dc39e127b7eee859f40de59b7bd3d12ce0d6.webp",
+        
+          
+          "425-CM125": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/425-CM125-8a97930f2ea088b5367d23e86e5444a6a62f9ef1f493324398632231d5bfd8d5.webp",
+        
+          
+          "425-CM125LR": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/425-CM125LR-fde80aae3f43320840707f0497fc01542ae6ecc87a610ac1c2ab3848f9b84c21.webp",
+        
+          
+          "425-CM250-SF": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/425-CM250-SF-80fdccda0c5ed8450fade033edb8b29418742654aae4c59abe4a7838afd3e959.webp",
+        
+          
+          "425-CM250": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/425-CM250-6a27e1a49302d29951fd14448a81efd03837da3ddcb89a0b49ee4a87d821558d.webp",
+        
+          
+          "425-DNC062": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/425-DNC062-f5d4162e2ce9cef5826c1bf416c97235e5bf44308079db83cb9462a7cb6a37d8.webp",
+        
+          
+          "425-DNC062LR": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/425-DNC062LR-db404c31535da9e6e262c8e91cf4e95a3d66f0a36de38542f577985d6f128d72.webp",
+        
+          
+          "425-DNC125": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/425-DNC125-901d509e7a42b91c94d60135745bbf2e7628f8318f05c661350a99fbb1cb2c06.webp",
+        
+          
+          "425-DNC125LR": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/425-DNC125LR-117185b97669b6158141e79ba87e9d6584f0a3c72d3b4df9e0866d47445e8952.webp",
+        
+          
+          "425-DNC250": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/425-DNC250-e9c634bfd9878cae222781829e9f29072b0c1f8f5a0904f0166b2d5d5211dfa2.webp",
+        
+          
+          "425-ST125C": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/425-ST125C-c46a8922d83f09e555b0400cb311fe0b8ded23e535b1c1dcb95fabe3e2152530.webp",
+        
+          
+          "425-ST250C": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/425-ST250C-833d34b81aae3dbb224164368a17595aac9b6d9d38cf667045b5601ccc56be41.webp",
+        
+          
+          "425-UP062": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/425-UP062-a95d8719d8a6665c6edcb288e72ca57be9a69a46acd99eb1139a890f756879a7.webp",
+        
+          
+          "425-UP125": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/425-UP125-4aed5ebd2c287d68674fcefdb522f1f43342c6a63860014e0405cda88e946b73.webp",
+        
+          
+          "425-UP250": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/425-UP250-2d5e32dfbdbd3eac1c9f2942c2ddb359029b430b6378ca419c1e5f19ab7472c3.webp",
+        
+          
+          "425-VG45": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/425-VG45-2541292c37a09e639047c65ecd2b64118a8bf1b9f286668d21855bb6d7466355.webp",
+        
+          
+          "425-VG60": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/425-VG60-936fc6d12691b8ba1a3fa9c567a42d4a25d463ce6ca33da000f678826f3405b0.webp",
+        
+          
+          "425-VG90": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/425-VG90-2c1053d16e40ccf28cb62a86c014f51629cde7af2d450894d7da38165ded3449.webp",
+        
+          
+          "430-ST250": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/430-ST250-b429c149c49c861cce2846f95d61667d374236f00a0c71a46b4cc6afd0f3a709.webp",
+        
+          
+          "530-CM500": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/530-CM500-30faa3b52ca96cfb36673b9a13453cc3fd37e4b7270f79b9db8fcbebd524ac00.webp",
+        
+          
+          "530-DNC500": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/530-DNC500-f540db13058abf2485a511057702d77933635ccc204ff119b36bddf06c1edab0.webp",
+        
+          
+          "530-SRB500": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/530-SRB500-ed9d2054380c8f74a73541980459bce45e947664b5fe46ff226d7aec65143052.webp",
+        
+          
+          "535-CM375-SF": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/535-CM375-SF-a0cf49a20574d74a2832c360027b559ca43f90df961189847331a03d5a03bd59.webp",
+        
+          
+          "535-CM375": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/535-CM375-02f60e387898ca5ad5bffba87c65d99aec135b5cf7fcbf064629a2fafc21c727.webp",
+        
+          
+          "535-CM500": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/535-CM500-714912df0cf10346a52ceabfdcd9fe4e846dc70581efcd8971dc2bd23d5c9136.webp",
+        
+          
+          "535-DNC375-60": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/535-DNC375-60-274ec592962d285ee8fb84855071eaf9838b0f9304b9436857e15a2bc975cb92.webp",
+        
+          
+          "535-DNC375": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/535-DNC375-e4b12c0e26d6866baba14aebb44f08f4c3f828002675d0c833bc1c041cc1a73d.webp",
+        
+          
+          "535-SRB375": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/535-SRB375-188d4ad6c5638baf48be8a8916e42be20becb44503de0edc5f78c9049c4a000d.webp",
+        
+          
+          "535-SRF375": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/535-SRF375-d6ee0b30b4d19bd09b8796d0a00d4a2dc83ebdb3b22ba3cfe6c7fb641e3984ca.webp",
+        
+          
+          "540-CM500": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/540-CM500-28c9a17c393d9a07f84e5c1dbd8aad1e088bd273652a2b3d200561a3eaa50524.webp",
+        
+          
+          "540-SRB500": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/540-SRB500-496c61bd6a2cecfce0f82e5170c0f8af1ba6ee1a09c5a2aeb11544148d4280ec.webp",
+        
+          
+          "540-SRF500": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/540-SRF500-7380a44e5a9e63580ce7b4d5438d3ce70da948fbe5fd4a136600f7a2a44e109c.webp",
+        
+          
+          "SRB4-062LR": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/SRB4-062LR-425cb0bf9354d0b02b8a5371fc6d1a45fbbea799eae5adec5a872f6569d10e54.webp",
+        
+          
+          "SRB4-062UP": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/SRB4-062UP-e69d3dc69db324e5d9ec72451d4ec1381280633a7bd164417b9d96b984578b94.webp",
+        
+          
+          "SRB4-125UP": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/SRB4-125UP-ef8b150647c1b0673175819e5385922fabeb79fd6f1ffefd33ea0a583fe565d3.webp",
+        
+          
+          "SRB4-187UP": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/SRB4-187UP-89b6542782a91ed79af6367d4a12b829af28f32e6ebacb8ee082ab8081725957.webp",
+        
+          
+          "SRB4-250UP": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/SRB4-250UP-fcc9b1924bf02d9e6e9742c51c59c8f894a7f9f6a520e95763814fac6351af48.webp",
+        
+          
+          "SRF4-062LR": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/SRF4-062LR-ad2b8bc446b8a74046153576c0e3cb19a1f407cd6e2330d191c9a2f99ba70843.webp",
+        
+          
+          "SRF4-062UP": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/SRF4-062UP-e86895971422b38d022fa4a475de321ea1cceb08a99811001e64a05eda8990dd.webp",
+        
+          
+          "SRF4-125UP": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/SRF4-125UP-6275debfb80128fde16a6b7196b2f08cc61c0ca089973844d67f70e99bcbae92.webp",
+        
+          
+          "SRF4-187UP": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/SRF4-187UP-a81dda9034287172461f7fff3835b909d5a511935e49afa2b7253e705146f60e.webp",
+        
+          
+          "SRF4-250UP": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/SRF4-250UP-61d0d41b8bbeac0dc4ff196ef234f5c6c459c3dcc167bc3cb396a864f920a307.webp",
+        
+          
+          "XL14-4150C": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/XL14-4150C-da9d9c0b5a15dbcd213337fc1ad7af4c4618acd6fede6ed6f36c0721c12a35f5.webp",
+        
+          
+          "XL14-420C": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/XL14-420C-e66401700faa69d305b330fe1fed381551e8f8a06f76a22899fbc7b45013b9d2.webp",
+        
+          
+          "XLB14-4150C": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/bitsbits/XLB14-4150C-fe8fc68b73f1c6fabc8db9646dea716a9b8d4ce761c9f808506b5a9ce5a82f32.webp",
+        
+      },
+    
+      
+      global: {
+        
+          
+          "26040-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/global/26040-01-bfa435b9c61addc55a7e7dbd7f4eda0c4dac1e23ee46120c5e36c3ab2a0808c1.webp",
+        
+          
+          "30237-02": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/global/30237-02-bd32f6564ca873ece11d6b847acd2fbb3ea49043c727b7e89ef63be8ce69f44d.webp",
+        
+          
+          "30238-02": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/global/30238-02-ace412fce07e830bed9e3cfb2526cf6ecc4c84751ad4788f89c497f5eb634275.webp",
+        
+          
+          "30342-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/global/30342-01-1e1ffc3c7847f2ea57fb0ae9583fabf7c8bbba830e459afb2230be295ecec262.webp",
+        
+          
+          "30342-02": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/global/30342-02-54521e46e0c2b9e2fdf6d40f75beef359f8279dda3b3b1fb1fd9c48d7ae3362d.webp",
+        
+          
+          "30423-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/global/30423-01-3a7d1e494a37d03d8fde5584b66df59d0d1378aa8afd453bc924d40b04ebbaf8.webp",
+        
+          
+          "30852-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/global/30852-01-a8b80fc726f31b897a9c11103abb60148af28f27d65ff9c43af67ecbf8a0e67e.webp",
+        
+      },
+    
+      
+      idc_woodcraft: {
+        
+          
+          "8675309-125DJ": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/8675309-125DJ-53ecbab1b40ab22ecb33175a351d4df562cdcb4e5b63bccf9844b39dabeebddc.webp",
+        
+          
+          "8675309-250DJ": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/8675309-250DJ-15fc820f42f0fcdb81e7fcd10923dd44517c88050bca375c7d5c7279996797ce.webp",
+        
+          
+          "8675309-BB": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/8675309-BB-87c45b32dc793ec4cff5bd4ce0b1224eaadf92bc57689f233180334b9a96efb2.webp",
+        
+          
+          "8675309-ERJ": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/8675309-ERJ-fe1a2086be652d5616ad8deaae484c938e02f051e03b125a879b4ba7706687c0.webp",
+        
+          
+          "8675309-J": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/8675309-J-d4248526c1e1c88fa6baf7f0787b7c6f55df4e4879c1bdaaba86e677cae67909.webp",
+        
+          
+          "8675309-MJ": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/8675309-MJ-80c1995641d4db7ac81416bf19eb3a910cb9e677b339e6350a3a2336b1a92bbb.webp",
+        
+          
+          "8675309-OJ": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/8675309-OJ-3d0832be613e5658ec0033a73e739c4da94914139c9f8cbfd2fe72bfe4abc445.webp",
+        
+          
+          "8675309-OJD": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/8675309-OJD-f4cd9ca26d1221cfe947c0b4f9de055b071223393ef5444bf1f2f374a5abc115.webp",
+        
+          
+          "8675309-SJ": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/8675309-SJ-baf0648d2aa51bca54942b5324a47ee60b0482c5e2f0b4a67fccd2d767bdff3c.webp",
+        
+          
+          "8675309-SLIM": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/8675309-SLIM-5979ab2dc840c0c157dd51d5419a7eb67695606ecd05e0fca7c9a7172f78231c.webp",
+        
+          
+          "8675309-UJ": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/8675309-UJ-1060a21af554ecec69dc21543e93b656070f71117ea02726801c51fc80f6be07.webp",
+        
+          
+          "8675309-V30": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/8675309-V30-c9567ce00c4ff8148f79a778f3368a40114aaaf56976803e44eb337d9b1cff9b.webp",
+        
+          
+          "8675309-V60": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/8675309-V60-6ed22bdbb10919efe7d2c2d8fefca045d30d5737a02b3212b4f39be72199a013.webp",
+        
+          
+          "8675309-V90": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/8675309-V90-32cbc9cb14d2e52ba5a91a5854af1dbb40486b8f15cf7856b4d865e8b6b2391a.webp",
+        
+          
+          "BADGER": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/BADGER-406e83d0a58d5bd17af069aab89e6ca760357df719901af4245e4b34f17feacc.webp",
+        
+          
+          "BD-14": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/BD-14-69196858c9963da2a084afbabb547296c0658fac9df92ef565e7e699cac56805.webp",
+        
+          
+          "BEAST": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/BEAST-8c690bc9cc5de42023cc214c5a577b29d40ae300f7b32848833aa261ae729351.webp",
+        
+          
+          "BN-10": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/BN-10-29c6bb16fbd44600dc5b7d522988f76043945ba37a8f7f1d7af02e29995214c5.webp",
+        
+          
+          "BN-12": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/BN-12-49998c34ce407bf8835c6a095fa9a389f8b4306904d5c9fcd6ba2e8b67c7491d.webp",
+        
+          
+          "BN-14": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/BN-14-12e59aeb83da0c600391c3fdfd10d5cae3249272a3e355cd9a48d3c59bd6ac8c.webp",
+        
+          
+          "BN-18": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/BN-18-272d079d285be7e4669ba4b271ca26ce92ea5398e999aea08d7447c5034868b1.webp",
+        
+          
+          "BN-34": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/BN-34-028cdb66176496901127964498b7110aabc44286102c215fc2896ceb3387153e.webp",
+        
+          
+          "BV-120": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/BV-120-c22f97095a2083abab2fc7a576b0236d1d7911af5f59a720da7b53a5538304a9.webp",
+        
+          
+          "BV-150": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/BV-150-bfa92c542e1a5e8f80edefb13ed87d92f8616757e6b75893839c5bc5fb13b51e.webp",
+        
+          
+          "BV-60": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/BV-60-c49bb1a5e15f933800b41348f2ce8bf9dad687a5717eb3e3d7b3395a783cda01.webp",
+        
+          
+          "BV-90": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/BV-90-8512dd6bcea8707068a249a174983a5b2b53862f8c35c1fcffd2ad5f0a3b9af8.webp",
+        
+          
+          "CM-14": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/CM-14-0b2b0894f8b0835f39d135352f6d2a56c57cc09f3bf14e609927e4d10711c8bb.webp",
+        
+          
+          "CM-18": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/CM-18-490b8e36ff84f57edce7b537958e16994a1435a96f5eea001f1d50a9d18d62b6.webp",
+        
+          
+          "CM-316": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/CM-316-7c3d1c5c886199888aaf1fbbd1424e2e51ae036e0fbee099eb0c2504ea5934fb.webp",
+        
+          
+          "DC-116": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/DC-116-79d5cd6738ad87ca9b598a0f9e70c1f13079c33a4725fed9df810ca56ad2ce85.webp",
+        
+          
+          "DC-132": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/DC-132-bdc7200a697d1c2c092fab1371654d63da64dcf23e40cfa811f7737d2538625f.webp",
+        
+          
+          "DC-14": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/DC-14-7779826f2b148e87e9a37f321c01fc7714ab6f0fd90ef6fcf0eafb49badc98d8.webp",
+        
+          
+          "DC-18": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/DC-18-bbdb204f1d99a32c246335521d1c9db092a8152592e10de97019393743087284.webp",
+        
+          
+          "DC-316": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/DC-316-36c6fac6916df64d38791084bca7c71e069b319174e902895117a141182bf04f.webp",
+        
+          
+          "DR-14": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/DR-14-82401e64133621e2cd1a8b82d74f62bf7391462f4957460e674012f15807fab8.webp",
+        
+          
+          "DR-18": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/DR-18-0984ada199e2aee151ba6b7e588daf9e444b681641da435a1ef4cdf87bc5fc60.webp",
+        
+          
+          "ED-12": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/ED-12-80673aa2efcdeffb1b1b3459eb0fc429221277d1d62729f82db1de812660b5b4.webp",
+        
+          
+          "ED-14": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/ED-14-776a3706db95d379ec235c3685a060400e6b5f4ac081466dedce214165ab389c.webp",
+        
+          
+          "HE-12-1": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/HE-12-1-87ce8fb80797026bec7108785c8523650d067cd53111e36cbce03d71803e712b.webp",
+        
+          
+          "HE-12-2": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/HE-12-2-0f81930fe5f99e68dd7f40b702116d291a4eb50246105502065ae6507a11bec3.webp",
+        
+          
+          "HE-38-1": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/HE-38-1-c1a89353a263d048cb1316d04e5d6bfc63b151e6f5b8656faf4623adf8b7f266.webp",
+        
+          
+          "HE-38-2": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/HE-38-2-ab7043f91e79104d34942101d70470d4888fed9394717896923859494f8f3c8c.webp",
+        
+          
+          "HOG": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/HOG-0cc95300cd7e676a2bb5923e8f70183dec322f7f19576157aa17d3278b58bbb2.webp",
+        
+          
+          "KH-38": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/KH-38-3fdf53ecf06120cbfecfd5d96b9b913ddefc0e4dd0283b1df819b97d0c81328b.webp",
+        
+          
+          "LV-30": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/LV-30-29cb96f291362f4f4a0b55ad9076692e957634159e705882aaf46cfe9e4d93c2.webp",
+        
+          
+          "LV-60": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/LV-60-1710eb79e4f4aeb79c7eb97b2060ccc052b336f9a5e4006e38a13f4d005e1ef6.webp",
+        
+          
+          "LV-90": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/LV-90-ec32907c9a9ed7eba78d955835cd10b171dbac26e74b863daa745f1c4b7737a1.webp",
+        
+          
+          "OF-116": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/OF-116-5fdc9548322499320afe4bc093cf3055b2d27305ec1356bf292633e3f5810d9e.webp",
+        
+          
+          "OF-14": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/OF-14-ccbe8338625057ef93f9bfbdbb04a0b2c2f80d23a509867f307d9359c265a7e9.webp",
+        
+          
+          "OF-18": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/OF-18-edfb4cab121b5f054d7ff457595742ad6398dec656ddb23d7966230ec6f8951a.webp",
+        
+          
+          "SU-10": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/SU-10-9149e72ba10d5aa445d00ba0731ff47b1f13e9a606f2fc002ecc07007f5feed8.webp",
+        
+          
+          "SU-15": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/SU-15-37f9ccb2bb2fefedbd83be544a62273a41df282146aa1226d4b201fdca261629.webp",
+        
+          
+          "SU-34": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/SU-34-f050cd443e438cff497ebbeda31e9eb07915c638348449ea2b364fae97f82de4.webp",
+        
+          
+          "SV-30": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/SV-30-031f54ae5b63c8ec2aa6212446ad37be40cf80b8b7542e356cc022a088548e1a.webp",
+        
+          
+          "SV-60": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/SV-60-8d1d95d07b41aed06a89fc8b0daafa8acc9a0a62f129ecb488b602cd0e270469.webp",
+        
+          
+          "SV-90": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/SV-90-230fb418ca569db7df534436ed2f4e82f74dc49339fd3412618a28fee1dd9355.webp",
+        
+          
+          "TV-12-6": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/TV-12-6-08cf13451316458e04f4e6573a89fea1a148b6497d92000b0ddcf198b9ab04b6.webp",
+        
+          
+          "TV-12-9": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/TV-12-9-bb8a0bdc1cf8512115039489bc4badbac52c33f82b706a38852dc6f9ae02ec90.webp",
+        
+          
+          "TV-38-6": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/TV-38-6-2a92322d1a58f0e614feabf65ae2066bad6a1235ff0d57e67f8be3c73d948fd7.webp",
+        
+          
+          "TV-38-9": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/TV-38-9-582684b3518e5c3f73ccd58c2b0b2de29deb856d3133e75c9b22d32c019084aa.webp",
+        
+          
+          "UC-14": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/UC-14-5b3aaec665ec50066b8bd2db3f6b12ce296282d8c6d0adb0d4b7a40b39701a4b.webp",
+        
+          
+          "UC-18": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/UC-18-e898f2478a8a7e28bfe472748bc76b6e620ea559cff05e551fa4b648241ecf05.webp",
+        
+          
+          "XD-14": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/XD-14-543e8635d9656b51a35ad342aa0cf4159f2778cbf31928748b7e758e9a191a59.webp",
+        
+          
+          "XD-18": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/idc_woodcraft/XD-18-1bc5c48f62aeccbbf21a8501e60e1cab767c2ac3822d329e923cfe0bfdfb789a.webp",
+        
+      },
+    
+      
+      inventables: {
+        
+          
+          "26000-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/26000-01-cd752e7b5c2c9c1ace0e1b1209a898e7568cd9b057d4a9754a8380c1e16c9727.webp",
+        
+          
+          "26001-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/26001-01-1cf211a2a6ab8517d6a9c5620cfc44d0a82647e8fa3a0f3f89cbb25a56887f72.webp",
+        
+          
+          "26003-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/26003-01-45be19d6e388856517304131e88cc891de32ac2662013f8bf79ce384b422ec29.webp",
+        
+          
+          "26004-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/26004-01-1e151884d396f70b6690746e7d03fde77a9301bbab3558e0bee178ddc46ee857.webp",
+        
+          
+          "26005-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/26005-01-f5504a85e7ba472911608a6d9f9c5d016566be27a71c8f412b726c2486e3cb69.webp",
+        
+          
+          "26006-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/26006-01-b159f1eeb0a405eceb851cad321d97ca4f6cb5ca90b1941694ec6d001b434781.webp",
+        
+          
+          "26007-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/26007-01-bf79ee2e33af513e0afeea3fc585a5435ce46883f9ccb53265d95f69b0985d91.webp",
+        
+          
+          "26009-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/26009-01-eeda099cfd1be01d85921d7828d196dd085ec328f8b493a94834f401c4bf4890.webp",
+        
+          
+          "26010-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/26010-01-ee39a64ab627248e77311f8693607f70dad57d3e514ef1df5c451a6c2554dabe.webp",
+        
+          
+          "26011-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/26011-01-fbb5d7a36c766d16ac13d6467e77da2d9129c0a4135f2187339cd49874222e53.webp",
+        
+          
+          "26012-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/26012-01-995e14fb295de0691953d6c237148976131b82001cb29eb068e32a6bdf306aab.webp",
+        
+          
+          "26013-02": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/26013-02-7c41b5d053978577c566e82ce2eb9c1614c03bc442a0538ea921dee2ad2d6266.webp",
+        
+          
+          "26014-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/26014-01-340b5e6d9f10207931977a94b0b927579792296226025d31acb3f3840ef675dd.webp",
+        
+          
+          "26040-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/26040-01-c4c7cab60c51b9382565b45db7b99172d2ab85690f373789ff7e3ef34557d5b0.webp",
+        
+          
+          "30237-02": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30237-02-608350d505d55e5909a7582695b9ad926d6ccd13f152ae0f930c6280b3552a98.webp",
+        
+          
+          "30238-02": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30238-02-c6507c371c7a8880385ee72b5cc88a2a0fc1af91710ab2edf62eb1c8ac7bae9e.webp",
+        
+          
+          "30240-02": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30240-02-6f8e8f94e6943931c804860b3949d00ecbbedd43be82bad76a0c671d66c2875b.webp",
+        
+          
+          "30342-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30342-01-b09a6c4ca9ef2bce3fe4ffdff5827318a470a182b958a83c88a45fc008171243.webp",
+        
+          
+          "30342-02": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30342-02-f7db3fa158ff20275c94a60f6e54053e39f0f1adb29d68cb59e54e5af0cec21a.webp",
+        
+          
+          "30342-03": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30342-03-48c4fe1f27ba431524b9a3a0355aaf97af06be22f9889a71fb12dd102c0d785d.webp",
+        
+          
+          "30342-04": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30342-04-4038c97edf274e1431c8b972cbbb49f2b68599560408cb5f0b1ad4f995ba500a.webp",
+        
+          
+          "30423-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30423-01-0a83b2e7277a30bb0f8ba31ab71fef2c99ba6bd74248563084e453f850749925.webp",
+        
+          
+          "30423-03": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30423-03-bdb3793f66b1f58a18b2e7ca789153561ea21fac2c28d242966651abc6830252.webp",
+        
+          
+          "30423-07": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30423-07-aad042fb0606ff38683cf9e49c23e06eafd712dd92614dd9d06a7386bb1b55f1.webp",
+        
+          
+          "30499-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30499-01-a5d56b983ce0017872716d4482a90d84b8d5a7d03ee6868b86acc66405140af9.webp",
+        
+          
+          "30667-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30667-01-5871f4b14735a0b9165fd3b6e1499c9f640f7fd43a6ad5482e4be644ef29d57f.webp",
+        
+          
+          "30667-02": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30667-02-e1c7dcd99f0aeb416af6498300d0c7e10e0b7b7bfac428b141381e9320dda55a.webp",
+        
+          
+          "30667-03": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30667-03-b252ce8f1a8f66a90e37de6dcfc63c8440578a6d6e71c84a225d5737798ec686.webp",
+        
+          
+          "30668-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30668-01-eaac99908427003a41e2713d9b4309281be0b0c8928341faec1ff899ddc367c8.webp",
+        
+          
+          "30669-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30669-01-40a180bd0cb292901935245db442d0e5e6101a56660fd15bbed0aa56c05003d0.webp",
+        
+          
+          "30670-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30670-01-47a9f7c97cb20bb48a8291ce9d0408df9850eec91601ee2481e124be04ab8157.webp",
+        
+          
+          "30842-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30842-01-57989384e53de032563cb2f32b5eb0da5a8d46d76789b21d75ee417191f510e2.webp",
+        
+          
+          "30850-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30850-01-96b3dfa04e8c8377012d150ddaced5803bd6aae23106f7135057fb98c0e03ee5.webp",
+        
+          
+          "30854-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30854-01-4b2071669644e23032f64e9862ac52eb75595152f1fe13d91dd8b867957eedb6.webp",
+        
+          
+          "30857-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30857-01-6ed64698f84e3943868d372deaaf39550fa067d938debeabeba306e20a5d28ca.webp",
+        
+          
+          "30907-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30907-01-3fccbfc96016a8af0f0e405d3a6a9fefb5ab7895792df13673c8f5a613eac888.webp",
+        
+          
+          "30908-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30908-01-38355ee0d3c00e153008124acadb088687bc9f24e48809e2521a4576b7caf377.webp",
+        
+          
+          "30909-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30909-01-57d22f079e91890d4c72b17d4b6c94296d7c28be0caa01ba55e620cacc9d8944.webp",
+        
+          
+          "30910-02": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30910-02-fc8f3c75fcf60a4c99174a4169126dba0d0739ee044ca99ea79e190b295709f1.webp",
+        
+          
+          "30911-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30911-01-95e5603dbbdbf6d9c6bf865f168120266bc1ca198440729f167014838f37165c.webp",
+        
+          
+          "30914-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30914-01-972e16e56b4ea590dbb9d05f1f3c23b19a88e7d4c15aea1e47e82013e7e4c99c.webp",
+        
+          
+          "30916-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30916-01-88f675872f40bef6296134b29f7ce301746b3677fd24f286ce04f44eeb7e6d65.webp",
+        
+          
+          "30925-01": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/inventables/30925-01-88250faa72c264f501c03b81c97536d001d950e15b006c4a8334602713cfe1e8.webp",
+        
+      },
+    
+      
+      spetool: {
+        
+          
+          "A01001": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/A01001-6fae5efee108da3232fd4db1d188364b7ed2668bf09f2b88ae0623a51e5595b6.webp",
+        
+          
+          "A02001": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/A02001-cc1b35df29b5b61a334b3694b41505d34e5c179cef93e51187aa89a6128c87cf.webp",
+        
+          
+          "A02002": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/A02002-23a48cc87bdd9ae7e3c2a7a4c87a3fa827ecb61c3e77a7bb20635d12c21214e1.webp",
+        
+          
+          "A02005": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/A02005-88333dafeebc13c4ebd9b432ef7f2c2fd843f61683640ed5704f0a9caa751c1a.webp",
+        
+          
+          "A02009": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/A02009-cbf98b401b1d03770a4d5aa9c6d1591975b59541202d853e9311365a4caf88de.webp",
+        
+          
+          "A03001": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/A03001-f3618642b212966620626a0bc0bfae51edb3c33ecb50c73d7fdb12fb9ef6067e.webp",
+        
+          
+          "A03002": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/A03002-83d464994cccf1ab3a7618fdb7af6c0b051a02912f4898a37d0a19b72b8602be.webp",
+        
+          
+          "A03003": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/A03003-cf383df991cdaa67ec8931058352223474e3ab5cd04794d1decacdd2c0b4e60b.webp",
+        
+          
+          "A03004": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/A03004-49b48d0d460f3d8766724e595fed390f1ec04607934627f6dd7af96922ebac82.webp",
+        
+          
+          "A04001": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/A04001-b610aad5e5ab40b6df81117285286c9ca21953c847f968e0baa38ec1b114dc21.webp",
+        
+          
+          "D12-D6-60": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/D12-D6-60-bef252a314ef26e7a7511ae39943677f1476d81a0fd2b547b00f5aec4529c1aa.webp",
+        
+          
+          "D12-D6-90": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/D12-D6-90-f02be035c8d91bde4691e013e5c4c2470e64b0d9de3abb0deca646cbda9ffc36.webp",
+        
+          
+          "D12-D8-60": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/D12-D8-60-5a4e785d85690f24156405626c69036b5b083ce2f16bbdd9968ace1e1a67a66c.webp",
+        
+          
+          "D12-D8-90": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/D12-D8-90-033f2bfcef3ae4a65c6c5e853e73d8a09cfeb09ab17036841cbfb05e0dd97c54.webp",
+        
+          
+          "ECP3F-D4.0-R60": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/ECP3F-D4.0-R60-d68b610438b4ac53926193fffd57ff9031d0524ee8d2d25c1eab8bc5589b43c2.webp",
+        
+          
+          "ECP3F-D4.0-R90": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/ECP3F-D4.0-R90-3d9b907b8b1f32cfc0f836d97e67bade6e0293b37eafbaee5351ae650b900c20.webp",
+        
+          
+          "ECP3F-D6.0-R60": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/ECP3F-D6.0-R60-54e7f0ec9b5cd763ba2f891b5994c6f0679e59a3bf5522f29d68c984c4a4f7fb.webp",
+        
+          
+          "ECP3F-D6.0-R90": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/ECP3F-D6.0-R90-e6a38b752bb9dcb635a74e43be3d06f9bf041cf47e172f8f971d5644c0348244.webp",
+        
+          
+          "IECP1F-D8-R60": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/IECP1F-D8-R60-12bd64ad49ae4e237263a08550ecd20015ae9f9d589d6f5509df6acc40c8e943.webp",
+        
+          
+          "IP2F-25-D8": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/IP2F-25-D8-df1829612686be9972ad4869f91dba1b91cee281ac7bcfb9e74c5dfd5f3069ae.webp",
+        
+          
+          "IP4F-75-D12": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/IP4F-75-D12-6b1ad134803aaaedef59054098f53ef2564a7fdbbcdf4de6faa5e0f4f7c8336f.webp",
+        
+          
+          "IP5FC-3-1_4-D1_2": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/IP5FC-3-1_4-D1_2-9e6861f77c284dac917af74fff4b5c52bf3eceab670cd202f9dd51f8a7514984.webp",
+        
+          
+          "M02001": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/M02001-f87352e54263b78d87cbc8f8223bda1826e0b865297b72788f691c91baea26ac.webp",
+        
+          
+          "M02002": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/M02002-a42b8792830d06a0e70ea76ee9b1bfc4fdcfe6e4cf6dcaaa56ff76eadd31a8c2.webp",
+        
+          
+          "M02003": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/M02003-29a834cfc53aa0490cbc5d74c3b35142aecb65260788042e98cd35fbdb983d85.webp",
+        
+          
+          "M02004": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/M02004-713e37e59b291e6ddc7bf27095d7aee5610592e49a6aa6c1fa9ecba11eccb5f0.webp",
+        
+          
+          "M02005": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/M02005-93a6892e60d4b00429d2e4c565e5e62fc69a0f9799fa70bb4ddf0341b1aecb29.webp",
+        
+          
+          "M02006": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/M02006-140f7923dd5fb2dcae2eea679420bea3bc530359022d13c84df65380f710df76.webp",
+        
+          
+          "M02007": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/M02007-4035a1729ae741152c464b97c8836ce4af5a38ac9c53fd17657855f9409e33b5.webp",
+        
+          
+          "M03001": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/M03001-66195d155fe1971825c7cdd777468d449e116c770933b103915efb725bbaa9b3.webp",
+        
+          
+          "M03003": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/M03003-063ef9cea605b580a2aac6cce7a7523b0f414eb54256b3e12d59300d7cdc7d7d.webp",
+        
+          
+          "M03004": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/M03004-7c85ac243a004af966b73a96b3edb3a0a5abd78655f05be50cff3def74856dc7.webp",
+        
+          
+          "M03005": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/M03005-377a4dd71be79d4e6a8f21098d0dc3f5bf08c53b43755f83ffca7cd663ddd025.webp",
+        
+          
+          "M03006": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/M03006-708a482be2dbe7f3849735f2c62c1a2698d7167866b08311a5f561afef37dc5a.webp",
+        
+          
+          "M03007": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/M03007-07b964d536a806aa347a25cf7abdc7eede595dbbe4ca04ecb8fc4bfac9cd2ff7.webp",
+        
+          
+          "M03008": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/M03008-6b0a82cd0928c386a2043f1e2beaddee6d856c94fde67d8f3334bffdbbd47c93.webp",
+        
+          
+          "M03009": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/M03009-a1116a20d5d985f38a46900f0e20b3042bffa0fd4cc373ab48d2445813f63f9e.webp",
+        
+          
+          "M03011": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/M03011-45bfbe8bc761342cd7857fc1a00036a05f83815d6b06443e4b01bdc82a1ccf44.webp",
+        
+          
+          "M04001": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/M04001-0a4bfc6ea2afd6d2a33c855a274d280f208ddf17c2136cc25efb23e9e33b48b5.webp",
+        
+          
+          "SA1F-D6-L22": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SA1F-D6-L22-1f3235276cb97c5bfaa2faa5fd0468d04224eb6873bbbe8914df7e1654a1b6f4.webp",
+        
+          
+          "SP-D4-L22-D": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP-D4-L22-D-4c387331cca6f41b18944200dad6278b52c5d8c4da40f9f6e5856847e4293f89.webp",
+        
+          
+          "SP-D4-L22-U": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP-D4-L22-U-7ee754a4007c608c2cf5b95fe466280fd2711ef2c2ab5ed43951945ccc53035a.webp",
+        
+          
+          "SP-D6-H6-D": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP-D6-H6-D-e0ca12bf7a3ce6a77454104353086f4c7d5d6270ebdbaf0ec95b12b7afc472e0.webp",
+        
+          
+          "SP-D6-H6-U": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP-D6-H6-U-44f91897b2a1c6f7ce7ac4adc74c06a3198f9bd24db191ec0e46095ffa2f5687.webp",
+        
+          
+          "SP-D8-H8-D": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP-D8-H8-D-77aabe8bad8bfb9f6f94b3ecca38796411f9a5cd28ad0466c1e4c5dcd394edf4.webp",
+        
+          
+          "SP-D8-H8-U": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP-D8-H8-U-a1fca87ac7a10465ce29008028deb9da753d2d4dce088b0a8e0ae5e9392dcfc0.webp",
+        
+          
+          "SP-d4-D8-L20-D": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP-d4-D8-L20-D-71f92baccee381aff2a9ebbb7ef227a6a9505c714e4f67dee9f907f2af3e00ec.webp",
+        
+          
+          "SP-d4-D8-L20-U": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP-d4-D8-L20-U-5b05066ebd416e5b29629a1589d0da90e592baa32a50d282133bf2f84267e65c.webp",
+        
+          
+          "SP-d6-D8-L24-D": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP-d6-D8-L24-D-e5c3886c97556417238444f54ed385ef09832cda50a16c5b8d237a73dea96319.webp",
+        
+          
+          "SP-d6-D8-L24-U": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP-d6-D8-L24-U-6322fd9e2452dfe0d5a41b1d176bce53b17c4ee7614c46b642eda5c5fb066ed5.webp",
+        
+          
+          "SP1F-D3.1-L12": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP1F-D3.1-L12-39277e4bac1de9cffd6e57ed4c04537f99a11a128b4ce26678ec355400d07cef.webp",
+        
+          
+          "SP1F-D3.1-L15": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP1F-D3.1-L15-3c725ae3b00754a36757c86ad2483a784c6fd43f7cf969bf53ea9053ab374a9b.webp",
+        
+          
+          "SP1F-D6-L22": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP1F-D6-L22-a01d6b07d72de63ff8c5ea7cf08ad5f7f71545451ffeec2a8c7b833449346cdd.webp",
+        
+          
+          "SP1F-D6-L32": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP1F-D6-L32-e074049f45c98a613c073501e0379e09ce317714da11ee95e4b960635539f092.webp",
+        
+          
+          "SP1F-D8-L32": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP1F-D8-L32-64ed13d2d836571e9003f0fdbef7f1d2f9524625618464cd5d4a74d9b8ed03bc.webp",
+        
+          
+          "SP2FC-D4-L22": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP2FC-D4-L22-a4525a31080da957244047124ba9c9ef275373ca8d87b1f7146dfad1dd58978d.webp",
+        
+          
+          "SP2FC-D4-L25": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP2FC-D4-L25-94bd8cfc11d21c5cd3de1350a3286a33711c7cd8672961d866f91fa52d3b6085.webp",
+        
+          
+          "SP2FC-D6-L22": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP2FC-D6-L22-ce71268ec747fd54ecefadd0df98ce0680976fddca4fea76b7f77110f065b36e.webp",
+        
+          
+          "SP2FC-D6-L32": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP2FC-D6-L32-849a6b10a30ebbd9b3592b3d376391595ff1b5f54825763a9d63038ff8146943.webp",
+        
+          
+          "SP2FC-D8-L32": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP2FC-D8-L32-78e3a2fc9deda1a424d4b6e001aac3ce7daa9358f076c1bc570fc2982e400272.webp",
+        
+          
+          "SP2FC-D8-L45": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP2FC-D8-L45-548dde66803aa8824f3d442e78dc73930e085ea867e1c4f2cf1e5d6a5729681b.webp",
+        
+          
+          "SP2FC-d4-D8-L20": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP2FC-d4-D8-L20-99196faa5937cad973193cfa45df48c8e1210a3b9ecb818688fdf9342896cbb4.webp",
+        
+          
+          "SP2FC-d6-D8-L24": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/SP2FC-d6-D8-L24-e7f72471b4bfa3db4eb1899d4a477328e5699cd6a7c018d8af7d3bdcb8ebb11e.webp",
+        
+          
+          "W02001": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W02001-8edfabff7daabbbc89fbf21c59822bb10228c049e8b2b559f81151d5b87bb7c0.webp",
+        
+          
+          "W02002": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W02002-09fd3bae26b0080e48c804e1b31e0ef89e458b14329af0cbc815430293570d55.webp",
+        
+          
+          "W02003": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W02003-c6664a8dc39549c67648bddadba69d0b1fead4a6c623e78f712fe2cc1a1c9bcf.webp",
+        
+          
+          "W02004": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W02004-2807172296b002a27e5a4f7d8cf320ef5e2abca1ce47ac508a3d2a80037bba5e.webp",
+        
+          
+          "W02005": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W02005-86a55c54907ee30065ec46aa08657821ff271faff479d2f61924fe5364547c61.webp",
+        
+          
+          "W02006": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W02006-7a277d634833faaf3a9ffadae987be731000448b7b20fd8c54af9b736bc1148c.webp",
+        
+          
+          "W02008": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W02008-74206f1aa226b67b4ca562119a678e46c2821d67a7e21f41c05019fb8ada50dd.webp",
+        
+          
+          "W02010": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W02010-2ce9a7d316ae278d6cf75ab132b69ea5725c8a44287b3faa5bf28880438c74cc.webp",
+        
+          
+          "W02011": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W02011-3a227c4d8099069a642ef445772c0ea5b4d75f1333a7851723c0dd7ba553215c.webp",
+        
+          
+          "W02012": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W02012-e05ce5533239d7b43fd2cc76be668274a815c9c96aef37911eb44831f913a5a5.webp",
+        
+          
+          "W02013": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W02013-81076a38b272f33846dd9dad9420d7a1ed4687b2766b32b93aa74f5cafeaab0d.webp",
+        
+          
+          "W02014": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W02014-566e358db3142c153c7fe685503f30a9d23fb624be5ba3c11d091eb3081c5a54.webp",
+        
+          
+          "W03001": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W03001-d018627786024d1b1eb402ba49ae76f18206a70616446e7056cb594138f441f3.webp",
+        
+          
+          "W03002": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W03002-0761953700de003c21566d877237acd41ced2ede68becdbe10d1f09a3eaf450c.webp",
+        
+          
+          "W03003": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W03003-063b4bb16e60614cfe5fccae3c61cd467539e9e4ca9b4b28568d5b48506c237e.webp",
+        
+          
+          "W03004": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W03004-e26382350d7ac80a0638b6fcb3c612bbba2db7cae943aefaad5bc9d1aa81807b.webp",
+        
+          
+          "W03005": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W03005-c30fd37db3b5d6b691fc661044efaee8e9c7127820a943e861052953075d909e.webp",
+        
+          
+          "W03006": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W03006-36ee3931f3dbf8f1fca44dce820aba8f102c5f26304b68bfd73f4f08fea9fc27.webp",
+        
+          
+          "W03012": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W03012-9cdaaea8392c27a00a62a7e36db13749e1087baf9ce1f33a875e878bcd21adc6.webp",
+        
+          
+          "W04001": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04001-54e64debb703402fe1266e0bf5db8c6e8053af28bba82994c3cda95ac7884407.webp",
+        
+          
+          "W04002": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04002-52f74f2eb15f9e8bdcf64fc2bc9e1367ab2c2f01dc4a1ba00bf382f6fba255ac.webp",
+        
+          
+          "W04003": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04003-2ccdcfbb51ce40d39559a0bcb1760d638cc4829f5ee5aeb2fd9ff0cf904a1169.webp",
+        
+          
+          "W04004": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04004-ee7e83b93960f4b593ab9c58bd5c7eb9fd18b29e086d96bad41f044b1b69b4d7.webp",
+        
+          
+          "W04005": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04005-4897c43fcd929bc0b96afa4bee20fe3433cd49ac124af053322e74d9ef0143fe.webp",
+        
+          
+          "W04006": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04006-4a7d603b718539c3f757554dd45b3ddc4d397e4c150255576dfba86e5db0c162.webp",
+        
+          
+          "W04007": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04007-99c713edf82cc4bceef74cbcdca31c729efa76431e939b5b9fad1e31ac30f400.webp",
+        
+          
+          "W04008": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04008-b90aa35c26c7d82abd48814ccff23c420f4c9c8a1dfd2ae51ff35fcf525180ff.webp",
+        
+          
+          "W04009": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04009-8b527da78d39962eddb9b2c33f467cbb562cb364ed05caa70cb1ec1f67b37e6b.webp",
+        
+          
+          "W04010": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04010-8604f1376a47e092034a36c77fc26a3591f29b4ef3fa890796ad930b22b42e54.webp",
+        
+          
+          "W04011": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04011-5958687bb7a6623be260d0a922e2d2617238b52eb410722f3f854fd9d4054252.webp",
+        
+          
+          "W04012": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04012-930c34b8208c6379275e096fa9440c47b4c3c84e05fd2e278946d3623e4af16c.webp",
+        
+          
+          "W04013": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04013-2a3ff4281e7db9ac9231169fdb8b6fe69b207b1a9378ffb3caf1717e9912f130.webp",
+        
+          
+          "W04014": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04014-2a0a58fa8c0c1b04fd01042697171734d7d3061850ae8c6b7f76785b254b1408.webp",
+        
+          
+          "W04015": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04015-58c3148f66a5851036d3ce1e4919152ae7bc40f01fea5aebf7f9b5dd8b427adf.webp",
+        
+          
+          "W04016": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04016-e533c37378dca8ec0a16d1a0c75719908bff7d862093c31b2ae1f1716ce711e7.webp",
+        
+          
+          "W04017": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04017-b9756b6cad1ffc96245def3961b926e6fbb90b68a197b20eb72765db6175d5e4.webp",
+        
+          
+          "W04018": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04018-a554bcbb6116860a928450062501ea930cd361a6a118cb6468df0ca065694685.webp",
+        
+          
+          "W04022": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04022-27ae7d9f5d1c5b8712f4d0739f20204dfcc3ea3ca74bfc0dd3ec97ffe5265a61.webp",
+        
+          
+          "W04023": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04023-d7ca4fac482ed18ef5f2c240a7c8ecdc63573dada65b7c1a39ea0fe89b61aaea.webp",
+        
+          
+          "W04024": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04024-c73d08907f21832663e74b28f2307cfc9cefc55760f8af45d7c162e91bf5c9c2.webp",
+        
+          
+          "W04029": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04029-4befbb606100bd6e34bd3f49b4855360cec22e6f29d3d064ae4e49165657ddb7.webp",
+        
+          
+          "W04030": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04030-baf10fab29cc39ebff54981c587192ae9282823754077f314f7d748134d14da2.webp",
+        
+          
+          "W04031": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04031-bc10ab2b6c7a2670f9a2f7c4bcc50a24bccfd2c339145b18597e642f9adac3a4.webp",
+        
+          
+          "W04032": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04032-b010f84cea2651314dc9df44e23ea8b929c5fe9b3f4dfb4063a4d4c6e4cd5e03.webp",
+        
+          
+          "W04033": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04033-61db020ecf046d553f174d36a51ca91d8dc09ab7d340ebfb4804c783a8a14b51.webp",
+        
+          
+          "W04034": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04034-80e0b5764811b67f5cab5a5c3b86d8042422f8a344464fe0d7ad3ba891d30454.webp",
+        
+          
+          "W04035": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04035-788f07fd00339ed8aa115b727f2adbf42f1c33f098a487dc652331eb10584d81.webp",
+        
+          
+          "W04036": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04036-af6cfce726760f70ec48dccc94a2ea786a7147040c5e66c5d11b371618aaec29.webp",
+        
+          
+          "W04037": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04037-a998023f44776da283ac68f63c2823bda377eada7997a384ad59f4b6b008da29.webp",
+        
+          
+          "W04038": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W04038-c9043590108897e782afbf50a5e5df1d4d8180026d45401cc55087145174daed.webp",
+        
+          
+          "W05001": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W05001-46317008c93b9570f6dbdda59bc0e4c24f01aa0f7a48164add2ebf9f6db06f37.webp",
+        
+          
+          "W05002": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W05002-f310ec1c183d642394faeb2a6f3445c3111e70a8f41e7c2134df8f71d4a2e49e.webp",
+        
+          
+          "W05003": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W05003-43fc74551a04b17eff1a44b1c0dc223d0d8bb3904ec3a9846e09c2bdb1f25697.webp",
+        
+          
+          "W05004": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W05004-84e8e7099c109986ac8bcca6897ee044aa39be88eb8268980efeea6af458a210.webp",
+        
+          
+          "W05005": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W05005-7fbf1d0d423bfd7bc603cbad7f209115e954ddac5e9161a0968b2419617c2bfe.webp",
+        
+          
+          "W05006": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W05006-32489e753e722f7db3e51c8d0b48fe73542d11f7973bc9f2e0933941e6c92475.webp",
+        
+          
+          "W05007": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W05007-3854b918da77629f5a09c629a6bf52fbe9c8504a41ece169ef36ed94dab05683.webp",
+        
+          
+          "W05008": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W05008-05180c1845a6a3061edd9114f5b3f8d9cf7007764a6f5632375c8742b61dd336.webp",
+        
+          
+          "W05009": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W05009-7fc8db815dcd932834e449990522438b8598bc7a62182c3a6b342edb27125b5a.webp",
+        
+          
+          "W05010": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W05010-8a41b4490371303f1061dda7226d603bd9a94541224c968eb1fdc18239129124.webp",
+        
+          
+          "W05011": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W05011-1babcd7d5f78e90409ccc997e2a8aecd6a8c178b6f203fd26c944496afe0d86c.webp",
+        
+          
+          "W06001": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W06001-6b91b718fce9ba0b6aab06d3a4200daa3ba82b14a7f60ac1701f03e6d102f840.webp",
+        
+          
+          "W06002": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W06002-8617fa3c7b3cdf6b2062dc1fcfbf2c148a74cf856e24265bab76fdec9927782e.webp",
+        
+          
+          "W06006": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W06006-b69bd1ac5aa824216983fc7fc56ecbb7fabfbb85686b541e74533f930f0c0f94.webp",
+        
+          
+          "W06007": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W06007-f9e4408d266fc698ac49692170582c01ff5080dc8b767de6f603348b7bc6a75d.webp",
+        
+          
+          "W06008": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W06008-5f63a7208506b2bfd73bc3804fe9a22820ca832ee4d6fa6d146dde190afed30a.webp",
+        
+          
+          "W06009": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W06009-886cb5f91c8bb8d7c00010ea8dad66a22b862aab475689679a7ba3e4139a7cf8.webp",
+        
+          
+          "W06010": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W06010-5043c3a10f534865e5e447d005da64e0dbbe8aa52bbcb9d515b778f109105378.webp",
+        
+          
+          "W06014": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W06014-6ec11cbac28a75a0be856fee1fce6c3a1c24570acbec4112908730157a9c2360.webp",
+        
+          
+          "W06017": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/W06017-d4b6ec2d2690349d77cb8ed3b007dcc5df0d9ec8aee202d47109c4b565c116ed.webp",
+        
+          
+          "WU3C-D6-L32": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/WU3C-D6-L32-9c6188801f90ab6243e1e987affe20f246e7ead0348fba0ba9c9601e73c8201f.webp",
+        
+          
+          "WU3C-D8-L32": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/spetool/WU3C-D8-L32-0d4f559e9dc35b5e30e17aa9d0864c27cfc7c69b0ea02309db279718a1c71e9e.webp",
+        
+      },
+    
+      
+      whiteside: {
+        
+          
+          "1403": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/1403-b1b72853eed6e15bc046c3d9d4e6e2c938411355e868e075651a6eeaf12f94d5.webp",
+        
+          
+          "1404": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/1404-90f0fcf6ae140c4315b396dfff6e742cffd42dce4dc55e53e1cff6625b47ee89.webp",
+        
+          
+          "1405": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/1405-cc6eae4d14d36a1e635c09cf38c9c1d978b94db5d14790bc9eab3203aeadf409.webp",
+        
+          
+          "1406": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/1406-f2d488059bdf7f203579aace285db1989edee906e9ec40112364efde0679dacf.webp",
+        
+          
+          "1500": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/1500-8386f07ac497ef14800dd88934fb4b5ecfc2a319abb8db9ebac6a460187f28ee.webp",
+        
+          
+          "1502": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/1502-c6f40dca5b86838d00dc774a574297122205aae6d15f771ca83a30157ed1f39e.webp",
+        
+          
+          "1541": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/1541-062f39ea63a2b568764aba80bcef279b01f591114eeeaf7d77a81a8eec2511ee.webp",
+        
+          
+          "1550": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/1550-a5d01b76d8de42354980e2d76b2adb33b3309c6a9f01bd29376d97d5197b52b7.webp",
+        
+          
+          "6210": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/6210-c5862d7c5742d2c9079f434a7da8d2fcc8d7e9b54f22c4273df8b55c00c041a6.webp",
+        
+          
+          "6220": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/6220-2ef4fc0a050635a2fe438e68c6c6ea7f17453e8173cf2e791e5d485b98d6c25d.webp",
+        
+          
+          "C1072": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/C1072-dc0deb647d0384c15fdbc9b0c591fe44964280a2427f5cfe9db778e591acd236.webp",
+        
+          
+          "RD1600": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/RD1600-698adf0e5d5d8fc1e1a0a22d480aeb05988946cd6a2ee798db19c2ed43bcb1a0.webp",
+        
+          
+          "RD1800": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/RD1800-f4176856700564cd574b6d29680ec1031fab3b8a91efc767aeca20c452364f00.webp",
+        
+          
+          "RD2075": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/RD2075-871d20e55f4acaab07f09d0bd9e22c1543954e99e39791f603c458189e19f689.webp",
+        
+          
+          "RD5100": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/RD5100-f6f25955002fcd8e5c3284e7e0f4011b24e234ba6e1f9b928ef7bb8b9e3001a6.webp",
+        
+          
+          "RU1600": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/RU1600-9af77474c32398c0f80274a623b7b749f014564afe11012fbac9e5e99a961d34.webp",
+        
+          
+          "RU1800": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/RU1800-9badc36489dbfb64bed73aedade3460eb2871c55ac4fb17d135e1732a90854f6.webp",
+        
+          
+          "RU1800RN": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/RU1800RN-e98a71f2387fbd847d23e6f85eb00cca4b586c4e5473ec08aace0ccd4d28aa25.webp",
+        
+          
+          "RU2075": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/RU2075-e9273774fb199200ef018814a222fbf21294ccfdca648e023f774b125849509a.webp",
+        
+          
+          "RU2075CN": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/RU2075CN-1c005ba51fd9ea002f51465e2de3914f23ca231df913bad8911d129174d48101.webp",
+        
+          
+          "RU2075RN": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/RU2075RN-60196313d6f18ce76189dae1791745c5616e0952257b432bd9d1d5a613d95790.webp",
+        
+          
+          "RU2100": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/RU2100-2f7d8fa1b2d6781f5ee2ff6631ecf200bcda6fcf2f983982f5b2e154f03cbb57.webp",
+        
+          
+          "SC062": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/SC062-5e46135d10308189b31535baa4cd994030c3e0cf0f073da9d732f7033bdbaebc.webp",
+        
+          
+          "SC33": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/SC33-0a871b3a43254e3cbadbc3e58203972e3f7696b94460a7bf5cb88a10885a4274.webp",
+        
+          
+          "SC39": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/SC39-5ce86363b5c980b8e8240f6ee134c4de9957cf390dfca079b28cde396b939243.webp",
+        
+          
+          "SC40": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/SC40-9cf6edb466a8da7c440b7b23aa664028b692e62c1f5ac0ef0f5ae816e52cc49d.webp",
+        
+          
+          "SC41": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/SC41-25bec2cfae592c0a19eeb5630f3ad358d24f8409bacf18a826059c3ffd4dcd7f.webp",
+        
+          
+          "SC50": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/SC50-1ac98868e0a23831cc6220fd095cea52464520e8003e88a5f31726502dc74260.webp",
+        
+          
+          "SC54": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/SC54-047eda8202ce477ca973838964655982dc4b8c77ad222dd9ebeb8ebba044cc51.webp",
+        
+          
+          "SC55": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/SC55-493d11799c96dd97b416378b367b25af6841afdf30565f692c9ead13c18890f7.webp",
+        
+          
+          "SC70": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/SC70-93fbedc92464c19fa437fc9090b7b1a4266a131aab80f898f6dbead37d98fa91.webp",
+        
+          
+          "SC71": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/SC71-fb9fda702e41bbe148704bf9c90f8f92c8251b738474b016ad6a7f671aa1aed7.webp",
+        
+          
+          "SC75": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/SC75-48f14509e38cf5a771daf264d8ca7c37c7a2e21479fa3528cc346523665252a7.webp",
+        
+          
+          "SC76": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/SC76-1e268037bf1e34684fb81ee87d1fcf9301d90f4c5333464c446e289c1ee4dd15.webp",
+        
+          
+          "UD2102": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/bits/sources/whiteside/UD2102-c663caa5ffc262db41d2bd1598db1435113abe703908312da2133b72dec04357.webp",
+        
+      },
+    
+  },
+
+  postProcessors: {
+    fusion360: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/f360-easel-15c1a1131b5a5271b560766b1e7628023b8a151856007faabc8b50724e0fe4a1.cps",
+    vectric: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/vectric-easel-6ea43382175e6946bd762b0b1e5f489190cf4dbf1f4071a214a768dcb4379c9d.pp",
+  },
+
+  machines: {
+    carvey: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/machines/carvey-30e0ce289f07119639b2b3ce88cf12b9b1c223dc0bab829f1499034cc6acfd1e.jpg",
+    xcarve: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/machines/xcarve-bc12cf26f1d839710f1d3f95b0ba0bff35f785a93e2d04f6d699a55ae8a02a7e.jpg",
+    xcp: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/machines/xcp-6d5d8d58d4f669b35668fe5d70039442527ddc147c8312218420091d2902d900.jpg",
+    unknown: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/machines/3rd-party-ed16af9e1bb16170fbaad42a4ad4eed70d458ba82259035bb2be397421a0a4d4.jpg",
+    xcarve2021: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/machines/xcarve-2021-7fca760a4e7b73323c7412aaf8930bbbbed1cb24a6a77ff06b19a19227f881e0.jpg",
+  },
+
+  setup: {
+    accessoriesDustShoe: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/accessories-dust-shoe-44665ec497a537c5842c6c541131c3f8dc783c3f451bfcc716d0e26fe62ed9e8.jpg",
+    accessoriesProbe: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/accessories-probe-ed75c24ec7c46a4c364b1f9090d0a01b4f2162dee6ab1010822756e25361e108.png",
+    accessoriesProbeThickness: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/accessories-probe-thickness-56a886bc4f9f8b9f625122c3cd9afb7447286874f068b91cb06151a17dea5417.png",
+    arrowLeft: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/control-arrow-left-da1ef72b0556f191cec963a50ec00b72f6c7e9578828f8f7a4d1011e3293aeb7.svg",
+    arrowUp: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/control-arrow-up-7c162eb3a65fcfc583130c3cc71ce2cc0979d38f619b527d908e1b57f32faa1f.svg",
+    blueArrow: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/blue-control-arrow-ece79f175bf4d930357c40f669497c452a5be709a344eff997036335279d64fc.svg",
+    crossMembers4x21: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/cross_member4x2_1-8a6ed91f45c7bcb5c69a2a85f58cb3425872408cbffc66c747a93fdb754ebc2f.png",
+    crossMembers4x22: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/cross_member4x2_2-3301a8326170cd8bd65790b1af2aacf1ec18a229c81b0d6ec6160f67f29d4d28.png",
+    crossMembers4x23: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/cross_member4x2_3-08dbfa8c38aa82dc41ed73d1b94468c60d1d0069108843eb38f59086ac976537.png",
+    crossMembers4x41: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/cross_member4x4_1-ac16f276f12caf48dc2dd98ac5df6acc6fcbc552efc06ff0af50c06ad7361288.png",
+    crossMembers4x42: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/cross_member4x4_2-c17566c3d9ce63e77be8c18c2c0f76707fb9ae98a2ca4cf7c4a51931044f2ecf.png",
+    crossMembers4x43: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/cross_member4x4_3-83dcaa59bff479255839b441e97c65ece6b5863c2cebf9f5648789fb58c0f3ee.png",
+    crossMembers4x44: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/cross_member4x4_4-3cf7ba48f475dff0859e2b7eab40aefb130bfa6c8cc252737e750ba9a33e39c9.png",
+    crossMembers4x45: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/cross_member4x4_5-6ddd214eaa8b7dd0d71b27ac15876a41a9a878ce09d3e4d126271607dbd48eb6.png",
+    eStopDisengage: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/e-stop-disengage-8c4f1f90d3e5b6d07ad955f60cb4c135f11722bceb3f99e81997d0cd00712cf3.gif",
+    hiEasel: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/hi-easel-a8efa3e122592333bec9642e1ae1ce82bb2c70754cd2f769cc8e774c34510f16.svg",
+    homing: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/homing-df7f4bf781d41f2c99a9e143ed4e9852667b220e0d1a4801e77c60655519d0fa.png",
+    spindleAttach: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/spindle_attach-af16aa7088f3b578de8b61dbdce032a67efe7c353c04d9cede359badfa2c239f.jpg",
+    spindleInsert: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/spindle_insert-ab513a3751e997c362c52e5e71ac575b5aaaff43e1f29dc96a3a9652d5acaf4b.jpg",
+    makitaSpindle: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/makita_spindle-30a73b078de12973f2b415eaa00ff1b55b08e7a388950bea8d5499065148e92c.jpg",
+    xcp4x2: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/xcp4x2-97517acbf78e0f9f05ba7882d2955c20129b5a104828b8f7fb4038804a8f4dc7.png",
+    xcp4x2Jog: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/xcp4x2_jog-a7319555ef434138a8baa5218b8aa06773328d31c8e991c51254585e433abbe6.png",
+    xcp4x4: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/xcp4x4-dda534f37434b7d04906a7410d5c63d2097c8f391bc1fefcc043ba3df88faef9.png",
+    xcp4x4Jog: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/xcp4x4_jog-ae5f1f66c7c43632537b565f354fc4d2f177b7ecab5049fa8a81238e715b9ae8.png",
+    xcpLogo: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/xcp-logo-324f29d95845e1c5250d2cfbfd4da039693468fb62ad7712da70b80ac47e12d5.svg",
+    wasteboard: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/wasteboard-93fd41552bc93b5570da1e945221abccaf2125a622bad99fe0e1b96d25ccfe97.png",
+    wasteboard_bottom: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/wasteboard_bottom-e8d6ba59f5ba57a0abd9ab18a6646ebcb7aeceddd8d675bfc992701957fcda61.jpg",
+    wasteboard_4x2: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/wasteboard_4x2-30819bea800ac5a8d06f944773ef3439221cbc64e40a8d2f539334c7027ad42d.png",
+    wasteboard_4x4: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/wasteboard_4x4-ae3dea1d1b3299eb1eca13babd17b472313f6633e7367af04c53f927ae8cc884.png",
+    spindleAutomaticGeneric: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/spindle-automatic-generic-849b0e23e771a8d83b00cb7ac0664223b024f44caea3bcdb75ecc1a40c2fb008.png",
+    spindleAutomaticGenmitsu: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/spindle-automatic-genmitsu-2bdbd90fb63ba479755e3c2bb300eadda498d5dccecfbaf0f1ee2d4542272c82.png",
+    spindleManualGeneric: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/spindle-manual-generic-06e13018f7f1c47a5510cbb143e8c6ad03fea0a4e6841e167049bc81ecb402ed.png",
+    spindleManualMakita: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/spindle-manual-makita-a34153fd1a037959d7e578f0bd4f150cadd88cecca9be715b23b780d8f0f3a2f.png",
+    t_slot_mdf1: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/t_slot_mdf1-420a122f2fc13a8eee37b2a79d96bb20883a91fb8bfb291225d514efa8cf02ab.jpg",
+    t_slot_mdf2: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/t_slot_mdf2-8b0c06e0f013846685e1ee6412c458a91ed884f64edaa54c43ccd90490321a96.jpg",
+    t_slot_torque: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/t_slot_torque-8db29d48f3aabfb410c78e602dab2bebd9125ee84e47584d6383156254319901.jpg",
+    t_slot_tracks1: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/t_slot_tracks1-9bb82096a4e74d65ba45a1d46ad4756414312173abbcab25f170de3e383af6ce.jpg",
+    t_slot_tracks2: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/t_slot_tracks2-544391a60f0644984d15a617fd7d9cfc192a40003bdded3aeeb47dca02b64ab3.jpg",
+    t_slot_wasteboard1: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/t_slot_wasteboard1-02c624f6bd0826cfa5b85d9cb5a6b40d00085c38c27a0584023c1af87fe4870f.jpg",
+    t_slot_wasteboard2: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/t_slot_wasteboard2-dc781ce90f9a7ad02eb87f365660533f49c1f3942acd125c331e3d3c28a59d02.jpg",
+    testWiringX: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/test-wiring-x-03607f5fa0872a2608de9febf11d9f60a1b3a9fe22d76e72690b24bc5d8ab50f.png",
+    testWiringYGantryFixed: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/test-wiring-y-gantry-fixed-a6db6db97bf231d9c82aa7b6bd9ddadeaeb622e1e70ebea21f03d6c4cc39f97e.png",
+    testWiringYGantryMoving: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/test-wiring-y-gantry-moving-62cd3eee28d1532337e4223eb5cf645c7ee5e156a426dd800d7bc20af1700fa6.png",
+    testWiringZ: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/setup/test-wiring-z-ff5f9648ce78aae5f1e9f1ffdc6174331e9680ff45bb206f6163b8eb6f8eee03.png",
+  },
+
+  projects: {
+    cardBox: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/projects/cards-holder-846c257ee8a43448a62caa280e7ce339ce448e11ecac31a20ad6336112bd5889.jpg",
+    circuitBoard: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/projects/circuit-board-d9894144f999dfd6d6375b653bb41452812460b9762ca75916161beb2cb6a09e.jpg",
+    dish: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/projects/arrow-dish-2baede81eca9fb4eddcf38b212b3f84ccc0ff66e6f7616457914edd99e01ded4.jpg",
+    puzzle: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/projects/number-puzzle-caf4bfa4507c045e01985a41da3b07074e2465fe88d73fcadfcb53e618844d14.jpg",
+    quadcopter: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/projects/quadcopter-130db3d8c780acf72ccf40967f14648949d52a99ea7187bca16bb83c30efab74.jpg",
+    vase: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/projects/vase-a955d82f98b9006542c070c63ea708093fb7917624ea6c54f1c4914056ffdc94.jpg",
+  },
+
+  svgs: { // ready to import into Easel projects
+    carveyFirstJob: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/walkthrough/easel-design-1b232e96b0d600520ebdfb57a98c856af3fc091b39589035333c35de9560d6de.svg",
+    firstJob: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/hi-easel-a8efa3e122592333bec9642e1ae1ce82bb2c70754cd2f769cc8e774c34510f16.svg",
+  },
+
+  textures: {
+    birch: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/textures/birch-14775230d0d74764e06083a50637c50cb6dac6319a2f6582f7131b422d68caa2.jpg",
+    aluminum: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/textures/aluminum-42f4e4dce352b6f272a5d235f176f8d1a69ea222720657135101fa6021b2633a.jpg",
+    pvc: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/textures/pvc-21a868d88c0fbf18054fea777efd3027d95244c5848d2ee5a63c8a716744f3ea.jpg",
+  },
+
+  videos: {
+    sleep: {
+      mp4: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/blank-easel-f7d60b761bf3642e3b948dd49b396dc6d777c408560a55b9e01080f7cad6ecae.mp4",
+      ogv: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/blank-easel-fabe1ecbf0d02829dac03f96eb572214a2443cdc9cc8220a3b1862ff2d2cedf2.ogv",
+    },
+  },
+
+  stylesheets: {
+    fonts: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/fonts-6ae9100946d71c102a2ef2478bec691045aeeda4d1b1e106e6103604d856bd0d.css",
+    print: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/print/print-331c5174d0f63a7d221f55626512f21ec45e76490e8a76b4facd70f5154275b1.css",
+    cutlist: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/print/cutlist-e74570a7063ffc00dcf0d81341b2250803002dc8a4d22d32d0bb293d612fcae9.css",
+  },
+
+  wasm: {
+    simplify: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/Fast-Quadric-Mesh-Simplification-fe4a3b171a78b1d11ee4a393f35fc8c3a08900ec19cc9be744e7335bfecad07d.wasm",
+  },
+
+  cabinet: {
+    framelessBasicLower: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/frameless-lower-bd2f07d3e581fdce39f5c00dc2c9c28e97b47c8f4bd2771edae3a3b684841b0d.webp",
+    framelessDrawersLower: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/frameless-lower-drawers-e23a163b3fef2a6a085ceb14348105b5afa4fc7c99dca2d8eb50d67ebcba57a7.webp",
+    framelessBasicUpper: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/frameless-upper-fdc98632778459fb020220fbae46a5372fffd6247b788719a69e9f92eeae1a87.webp",
+    framelessUpperCornerNinetyDegree: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/frameless-upper-corner-90-degree-58fec241fc255857b44332e5ea3ad6a459627cc4732b38a102c371c266585382.webp",
+    framelessDrawerDoorLower: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/frameless-lower-drawer-over-door-a00ba7ef7f1302ea72af051658907ca0f795083cd4e2d3574b59a27b9487232c.webp",
+    framelessSinkLower: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/frameless-lower-sink-1d1d8009e691d11744bec3201e88c920c6bf949129797bf039966931acd09acf.webp",
+    framelessUpperCornerBlind: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/frameless-upper-corner-blind-aa6884ccf536ebf1a0ca741fba1b17b5646cf8ab33d1463ec8ad02b6f3c1bf61.webp",
+    framelessLowerCornerBlind: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/frameless-lower-corner-blind-86baf4d2563655fb1ee688e180b9628b2b4f2e8debb3b977b616c7b21d8e687a.webp",
+    framelessLowerCornerNinetyDegree: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/frameless-lower-corner-90-degree-1ba14ba46d04412dd8dbe809aaf64de88f9369205c53e7d1f16e1343cb3b6932.webp",
+    wallFillerStrip: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/wall-filler-strip-a76a4071be4f38913c77169972a380d391154a0ec0db2968ed656c332ea15020.webp",
+    baseFillerStrip: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/base-filler-strip-cbc9099d9f9f6df1499f34930bf10dc2dd5a34eda39c1214532c74b9e9ea6771.webp",
+
+    window: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/window-731e8734c954bdf2053cda701259238166344559b8a75a6d9e18ee68ea3e55a5.webp",
+    door: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/door-c61dd91aab68b7a9c9834d39f117c11c4a66852e4c1359e2cbb7bf2c4df50ed4.webp",
+
+    refrigerator: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/refrigerator-cfc77df02df58953cab7a0085688e5853dea44c9d5aad7f364c52d4cb83c3ee2.webp",
+    range: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/range-4bcd0816bde8a4a9af814f4112dd3a81c646e9112629478dc6ff674779d23de5.webp",
+    dishwasher: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/dishwasher-88dbc712aac61b1a8929780c9b1d7a3fb68c83477d76bd86958848a8f2b64754.webp",
+    microwave: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/microwave-c36d0a061ef873e818a7533e0aadc57b0d35e9b0aa090a9d16b18da92bca4bc5.webp",
+    appliance: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/appliance-8f7bda1d1f5a4f1a1252bc17e50472845a18cfef2441f0313ddab8010b672ae3.webp",
+
+    emptyRoomThumbnail: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/empty-room-thumbnail-dd2c8767c3796418b5de3410767123983c3828a51b6ca584d3be6d68a263a1fb.webp",
+
+    // TODO: Is this last one still used?
+    "Empty Room": "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/empty-room-77ebb771807744be993b10cc0180b86c8070baeed65498baca9030f5ad18c0e3.webp",
+    textures: {
+      wall: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/textures/generated-texture-paper-a2439a5559f8e3cd063d09a30a217cb4789ca07899c2e6a72480192649fd4152.jpg",
+      floor: "https://d1ruu3w8cmk6tc.cloudfront.net/assets/cabinet-designer/textures/81_old white wood grain texture-seamless-8c841e3ebf8f62aac0d333f6cade252429e2c72b50839291bf2ee504340aac49.jpg",
+    },
+    
+  },
+};
