@@ -23,132 +23,131 @@
 // #define APA102_USE_FAST_GPIO
 
 #include <APA102.h>
+#include <Arduino.h>
 
-const uint8_t dataPin = 9;
-const uint8_t clockPin = 10;
+const uint8_t dataPin = 47;
+const uint8_t clockPin = 48;
 
 // Create an object for writing to the LED strip.
 APA102<dataPin, clockPin> ledStrip;
 
-const uint16_t ledCount = 60;
+const uint16_t allLED = 60;
+const uint16_t ledCount = 10;
 const uint16_t maxPower = 255 * 31;
 const uint16_t minPower = 1;
+const uint8_t power = 25; //  CHANGE THIS FOR BRIGHTNESS
 const float multiplier = pow(maxPower / minPower, 1.0 / (ledCount - 1)); // 1.1643
+double tetristimer = 4000; // in ms and speeds up -> time between adding LEDs
+double falltimer = 2000; // in ms and speeds up -> time between falling LEDs
+double logtimeT = 0;
+double logtimeF = 0;
+bool gameover = 0;
+int16_t currCount = 0;
+const uint8_t ButtonPressPin = 35; // ******SET PINNNN******************************
+bool pressed = 0;
+byte currScore = 0x00;
+int strikes = 0;
+int numbottom = 0;
+bool addsingle = 1;
+int botk = 0;
 
-rgb_color colors[ledCount];
+rgb_color master[allLED];
 
 //const float power = minPower * pow(multiplier, 10);
 
-void setup()
-{
+void setup() {
+  Serial.begin(115200);
+  pinMode(ButtonPressPin, INPUT); // Passive pulldown
+  uint8_t bright5bit = bright();
+  for (int i = 0; i < allLED; i++) {
+    master[i].blue = 0;
+    master[i].red = 0;
+    master[i].green = 0;
+  }
+  ledStrip.write(master, allLED, bright5bit);
 }
 
-void sendWhite(uint8_t power) {
-  //int bright = calibrateBrightness();
+uint8_t bright() {
   uint8_t bright5bit = 1;
-  while(bright5bit * 255 < power && bright5bit < 31)
-  {
-    bright5bit++;
-  }
-
+  while (bright5bit * 255 < power && bright5bit < 31) { bright5bit++; }
   uint8_t intensity = (power + (bright5bit / 2)) / bright5bit;
-
-  ledStrip.sendColor(intensity, intensity, intensity, bright5bit);
+  return bright5bit;
 }
 
-void sendRed(uint8_t power) {
-  //int bright = calibrateBrightness();
-  uint8_t bright5bit = 1;
-  while(bright5bit * 255 < power && bright5bit < 31)
-  {
-    bright5bit++;
-  }
-
-  uint8_t intensity = (power + (bright5bit / 2)) / bright5bit;
-
-  ledStrip.sendColor(intensity, 0, 0, bright5bit);
+void AddToQueue() {
+  Serial.println("Added to Queue");
+  uint8_t bright5bit = bright();
+  master[ledCount - 1].blue = 255;
+  ledStrip.write(master, ledCount, bright5bit);
+  currCount = currCount + 1;
 }
 
-void sendBlue(uint8_t power) {
-  //int bright = calibrateBrightness();
-  uint8_t bright5bit = 1;
-  while(bright5bit * 255 < power && bright5bit < 31)
-  {
-    bright5bit++;
+void ShiftStack() {
+  //Serial.println("Stack Shifted");
+  uint8_t bright5bit = bright();
+  if (master[botk].blue == 255) {
+    numbottom = numbottom + 1;
+    botk = botk + 1;
+  }
+  for (int i = numbottom; i < ledCount - 1; i++) {
+    master[i] = master[i + 1];
   }
 
-  uint8_t intensity = (power + (bright5bit / 2)) / bright5bit;
+  master[ledCount - 1].blue = 0;  // Reset master[i + 1] which is last position unaccounted for in the for loop
 
-  ledStrip.sendColor(0, 0, intensity, bright5bit);
+  ledStrip.write(master, ledCount, bright5bit);
 }
 
-void sendGreen(uint8_t power) {
-  //int bright = calibrateBrightness();
-  uint8_t bright5bit = 1;
-  while(bright5bit * 255 < power && bright5bit < 31)
-  {
-    bright5bit++;
+void GameOver() {
+  uint8_t bright5bit = bright();
+  // Game Over Sequence
+  for (int i = 0; i < 5; i++) {
+    for (int j = 0; j < ledCount; j++) {
+      master[j].blue = 0;
+      master[j].red = 255;
+    }
+    ledStrip.write(master, ledCount, bright5bit);
+    delay(500);
+    for (int j = 0; j < ledCount; j++) {
+      master[j].red = 0;
+    }
+    ledStrip.write(master, ledCount, bright5bit);
+    delay(500);
   }
-
-  uint8_t intensity = (power + (bright5bit / 2)) / bright5bit;
-
-  for (int i = 0; i < ledCount; i++) {
-    colors[i].red = 0;
-    colors[i].green = 255;
-    colors[i].blue = 0;
-  }
-
-  ledStrip.write(colors, ledCount, bright5bit);
 }
 
 void loop() {
-  bool done = 0;
-  static int maxLED = 10;
-  static int currCount = -1;
-  static int currIndex = maxLED;
-
-  float power = 25;
-  uint8_t bright5bit = 1;
-  while(bright5bit * 255 < power && bright5bit < 31)
-  {
-    bright5bit++;
-  }
-  while (!done) {
-    while (currIndex > currCount) {
-      colors[currIndex].blue = 255;
-      ledStrip.write(colors, ledCount, bright5bit);
-      delay(1000);
-      currIndex = currIndex - 1;
-      if (currIndex == currCount) { 
-        currCount = currCount + 1;
-        currIndex = maxLED;
-        break; 
-      }
-      colors[currIndex + 1].blue = 0;
-      ledStrip.write(colors, ledCount, bright5bit);
-    }
-    if (currIndex == currCount) { done = 1; }
+  // Tetris is full - ran out of time
+  if (currCount == ledCount) { GameOver(); }
+  
+  // Queue Timer expired - add another LED to Queue
+  if (logtimeT + tetristimer <= millis()) {
+    logtimeT = millis();
+    Serial.println(tetristimer);
+    ShiftStack();
+    AddToQueue();
+    tetristimer = tetristimer - 50; // Make turns shorter
+    if (tetristimer < 100) { tetristimer = 100; }
   }
 
-  for (int i = 0; i < 5; i++) {
-    for (int j = 0; j <= maxLED; j++) {
-      colors[j].blue = 0;
-      colors[j].red = 255;
-    }
-    ledStrip.write(colors, ledCount, bright5bit);
-    delay(500);
-    for (int j = 0; j <= maxLED; j++) {
-      colors[j].red = 0;
-    }
-    ledStrip.write(colors, ledCount, bright5bit);
-    delay(500);
+  if (logtimeF + falltimer <= millis()) {
+    logtimeF = millis();
+    Serial.println(falltimer);
+    ShiftStack();
+    falltimer = falltimer - 50;
+    if (falltimer < 100) { falltimer = 100; }
   }
-
-  /*ledStrip.startFrame();
-  float power = 25;
-  for(uint16_t i = 0; i < ledCount; i++)
-  {
-    sendGreen(power);
-  }
-  ledStrip.endFrame(ledCount);*/
+  /*// Read button press
+  pressed = digitalRead(ButtonPressPin);  
+  if (pressed) {
+    if (master[0].blue == 255) {
+      ShiftStack();
+      currScore = currScore + 1;
+      // Implement Debounce
+    }
+    else { // LED does not exist
+      strikes = strikes + 1;
+      if (strikes == 3) { GameOver(); }
+    }
+  }*/
 }
