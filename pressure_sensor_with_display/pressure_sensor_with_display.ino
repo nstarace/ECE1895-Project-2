@@ -1,5 +1,5 @@
-// Hall effect sensor 1 signal in pin 46 
-int hall_1 = 46; 
+// pressure sensor 1 in pin 0
+int press_1 = 0; 
 unsigned long getTime = 0; 
 
 // Declare 14 segment display variables 
@@ -17,19 +17,17 @@ const uint8_t ScoreDisplay[8] = {a2, b2, c2, d2, a1, b1, c1, d1};
 // Declare current score variable 
 byte currScore = 0x00;
 
-
-void setup() {
+void setup(){
   // Configure 14 segment display pins 
   for (int i = 0; i < 8; i++) {
     pinMode(ScoreDisplay[i], OUTPUT);
   }
 
-  // Start serial 
-  Serial.begin(115200);
+  // Start serial
+  Serial.begin(115200); 
 
-  // Set Pin 46 on ESP32 as input for hall effect sensor 1
-  pinMode(hall_1, INPUT); 
-
+  // Set pin 1 on ESP32 for pressure sensor 1
+  pinMode(press_1,INPUT); 
 }
 
 // Function to increment current score 
@@ -41,11 +39,10 @@ void incrementScore() {
   }
 }
 
-void loop() {
-  int hall_1_state = digitalRead(hall_1); 
+void loop(){ 
+  int press_1_state = digitalRead(press_1); 
 
-  if(hall_1_state == HIGH){
-    Serial.println("Magnet is touching"); 
+  if(press_1_state == HIGH){
     incrementScore(); 
 
     getTime = millis(); 
@@ -53,7 +50,9 @@ void loop() {
     while(millis() < getTime + 10000){
       // wait 
       Serial.println("waiting"); 
-    } 
-    Serial.println("done waitng"); 
+    }
+
+    Serial.println("done waiting"); 
   }
 }
+
