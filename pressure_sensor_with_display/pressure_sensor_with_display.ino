@@ -1,12 +1,20 @@
 #include <APA102.h>
 #include <Arduino.h>
 
-// Pressure sensor pin variable 
+// Declare command flags
+bool chopit = 0; 
+bool crushit = 1; 
+bool cookit = 0; 
+
+// Pressure sensor 1 pin variable 
 int press_1 = 45; 
 
 // LED pin variables 
 const uint8_t dataPin = 47;
 const uint8_t clockPin = 48;
+
+// Hall effect sensor variables 
+int hall_1 = 46; 
 
 // Create an object for writing to the LED strip.
 APA102<dataPin, clockPin> ledStrip;
@@ -49,12 +57,14 @@ int botk = 0;
 
 rgb_color master[allLED];
 
-// Declare pressure sensor variables
+// Declare sensor variables
 unsigned long currentTime = 0;
 unsigned long lastPressedTime = 0;
 const unsigned long debounceDelay = 5000; // 5 seconds
 bool botLEDOn = 0; 
 bool pressed = 0; 
+bool crushed = 0; 
+bool tilted = 0; 
 
 
 void setup(){
@@ -66,8 +76,11 @@ void setup(){
     pinMode(ScoreDisplay[i], OUTPUT);
   }
 
-  // Set pin 1 on ESP32 for pressure sensor 1
+  // Set pin on ESP32 for pressure sensor 1
   pinMode(press_1,INPUT); 
+
+  // Set pin on ESP32 for hall effect sensor
+  pinMode(hall_1, INPUT); 
 
   // Set up for LEDs
   pinMode(ButtonPressPin, INPUT); // Passive pulldown
@@ -166,8 +179,10 @@ void loop() {
   
   // Increment score if pressed and LED is at the bottom 
   currentTime = millis();
+
+  // Read sensor states 
   int press_1_state = digitalRead(press_1);
-  Serial.println(press_1_state);
+  int hall_1_state = digitalRead(hall_1); 
 
   // Check if bottom LED is on
   if(master[0].blue == 255){
@@ -177,14 +192,24 @@ void loop() {
     botLEDOn = 0; 
   }
 
-  if (botLEDOn && press_1_state == HIGH && (currentTime - lastPressedTime >= debounceDelay)) {
+  // Chop-it (also need to add not crushed and not cooked)
+  if (chopit && botLEDOn && press_1_state == HIGH && (currentTime - lastPressedTime >= debounceDelay)) {
     pressed = 1;
     lastPressedTime = currentTime;
-  }
-
+  } 
   if (pressed) {
     incrementScore();
     pressed = 0;  
   }
-}
 
+  // Crush-it 
+  if(crushit && botLEDOn && hall_1_state == HIGH && (currentTime - lastPressedTime >= debounceDelay)){
+    crushed = 1; 
+    lastPressedTime = currentTime;
+
+    if(crushed){
+      incrementScore(); 
+      crushed = 0; 
+    }
+  }
+}
