@@ -1,10 +1,12 @@
 #include <APA102.h>
 #include <Arduino.h>
+#include <Wire.h>
+#include "SparkFun_BMI270_Arduino_Library.h"
 
 // Declare command flags
 bool chopit = 0; 
-bool crushit = 1; 
-bool cookit = 0; 
+bool crushit = 0; 
+bool cookit = 1; 
 
 // Pressure sensor 1 pin variable 
 int press_1 = 45; 
@@ -18,6 +20,12 @@ int hall_1 = 46;
 
 // Create an object for writing to the LED strip.
 APA102<dataPin, clockPin> ledStrip;
+
+// Create new IMU object 
+BMI270 imu;
+
+// I2C address selection 
+uint8_t i2cAddress = BMI2_I2C_PRIM_ADDR; // 0x68
 
 // Declare 14 segment display variables 
 uint64_t sample = 0;
@@ -81,6 +89,20 @@ void setup(){
 
   // Set pin on ESP32 for hall effect sensor
   pinMode(hall_1, INPUT); 
+
+  // Set up for IMU
+  Wire.begin(); 
+
+  // Check if sensor is connected and initialize
+  while(imu.beginI2C(i2cAddress) != BMI2_OK)
+  {
+      // Not connected, inform user
+      Serial.println("Error: BMI270 not connected, check wiring and I2C address!");
+
+      // Wait a bit to see if connection is established
+      delay(1000);
+  }
+  Serial.println("BMI270 connected!");
 
   // Set up for LEDs
   pinMode(ButtonPressPin, INPUT); // Passive pulldown
@@ -183,6 +205,7 @@ void loop() {
   // Read sensor states 
   int press_1_state = digitalRead(press_1);
   int hall_1_state = digitalRead(hall_1); 
+  imu.getSensorData(); 
 
   // Check if bottom LED is on
   if(master[0].blue == 255){
@@ -206,10 +229,21 @@ void loop() {
   if(crushit && botLEDOn && hall_1_state == HIGH && (currentTime - lastPressedTime >= debounceDelay)){
     crushed = 1; 
     lastPressedTime = currentTime;
+  }
 
     if(crushed){
       incrementScore(); 
       crushed = 0; 
     }
+  
+  // Cook-it 
+  if(cookit && botLEDOn && (imu.data.gyroY > 220) && (currentTime - lastPressedTime >= debounceDelay)){
+    tilted = 1; 
+    lastPressedTime = currentTime;
+  }
+
+  if(tilted){
+    incrementScore(); 
+    tilted = 0; 
   }
 }
