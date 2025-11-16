@@ -4,9 +4,9 @@
 #include "SparkFun_BMI270_Arduino_Library.h"
 
 // Declare command flags
-bool chopit = 0; 
+bool chopit = 1; 
 bool crushit = 0; 
-bool cookit = 1; 
+bool cookit = 0; 
 
 // Pressure sensor 1 pin variable 
 int press_1 = 45; 
@@ -158,6 +158,12 @@ void ShiftStack() {
   ledStrip.write(master, ledCount, bright5bit);
 }
 
+void removeBottomLED(){
+  uint8_t bright5bit = bright();
+  master[numbottom - 1].blue = 0; 
+  ledStrip.write(master,ledCount, bright5bit); 
+}
+
 // Function for LED game-over sequence 
 void GameOver() {
   uint8_t bright5bit = bright();
@@ -198,8 +204,7 @@ void loop() {
     falltimer = falltimer - 50;
     if (falltimer < 100) { falltimer = 100; }
   }
-  
-  // Increment score if pressed and LED is at the bottom 
+
   currentTime = millis();
 
   // Read sensor states 
@@ -215,35 +220,36 @@ void loop() {
     botLEDOn = 0; 
   }
 
-  // Chop-it (also need to add not crushed and not cooked)
-  if (chopit && botLEDOn && press_1_state == HIGH && (currentTime - lastPressedTime >= debounceDelay)) {
+  // Chop-it 
+  if ((chopit) && (botLEDOn) && (press_1_state == HIGH) && (currentTime - lastPressedTime >= debounceDelay)) {
     pressed = 1;
     lastPressedTime = currentTime;
   } 
-  if (pressed) {
+  if (pressed && !crushed && !tilted) {
     incrementScore();
     pressed = 0;  
   }
 
   // Crush-it 
-  if(crushit && botLEDOn && hall_1_state == HIGH && (currentTime - lastPressedTime >= debounceDelay)){
+  if((crushit) && (botLEDOn) && (hall_1_state == HIGH) && (currentTime - lastPressedTime >= debounceDelay)){
     crushed = 1; 
     lastPressedTime = currentTime;
   }
 
-    if(crushed){
-      incrementScore(); 
-      crushed = 0; 
-    }
+  if(crushed && !pressed && !tilted){
+    incrementScore(); 
+    crushed = 0; 
+  }
   
   // Cook-it 
-  if(cookit && botLEDOn && (imu.data.gyroY > 220) && (currentTime - lastPressedTime >= debounceDelay)){
+  if((cookit) && (botLEDOn) && (imu.data.gyroY > 220) && (currentTime - lastPressedTime >= debounceDelay)){
     tilted = 1; 
     lastPressedTime = currentTime;
   }
 
-  if(tilted){
+  if(tilted && !pressed && !crushed){
     incrementScore(); 
+    removeBottomLED(); 
     tilted = 0; 
   }
 }
