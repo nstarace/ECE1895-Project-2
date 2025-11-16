@@ -4,9 +4,9 @@
 #include "SparkFun_BMI270_Arduino_Library.h"
 
 // Declare command flags
-bool chopit = 1; 
+bool chopit = 0; 
 bool crushit = 0; 
-bool cookit = 0; 
+bool cookit = 1; 
 
 // Pressure sensor 1 pin variable 
 int press_1 = 45; 
@@ -97,12 +97,12 @@ void setup(){
   while(imu.beginI2C(i2cAddress) != BMI2_OK)
   {
       // Not connected, inform user
-      Serial.println("Error: BMI270 not connected, check wiring and I2C address!");
+      //Serial.println("Error: BMI270 not connected, check wiring and I2C address!");
 
       // Wait a bit to see if connection is established
       delay(1000);
   }
-  Serial.println("BMI270 connected!");
+  //Serial.println("BMI270 connected!");
 
   // Set up for LEDs
   pinMode(ButtonPressPin, INPUT); // Passive pulldown
@@ -134,7 +134,7 @@ uint8_t bright() {
 
 // Function to add LED to queue 
 void AddToQueue() {
-  Serial.println("Added to Queue");
+  //Serial.println("Added to Queue");
   uint8_t bright5bit = bright();
   master[ledCount - 1].blue = 255;
   ledStrip.write(master, ledCount, bright5bit);
@@ -148,6 +148,15 @@ void ShiftStack() {
   if (master[botk].blue == 255) {
     numbottom = numbottom + 1;
     botk = botk + 1;
+
+    Serial.println("numbottom = "); 
+    Serial.println(numbottom); 
+    Serial.println("botk = "); 
+    Serial.println(botk); 
+    Serial.println("ledCount = "); 
+    Serial.println(ledCount);
+    Serial.println("currcount = "); 
+    Serial.println(currCount); 
   }
   for (int i = numbottom; i < ledCount - 1; i++) {
     master[i] = master[i + 1];
@@ -158,10 +167,34 @@ void ShiftStack() {
   ledStrip.write(master, ledCount, bright5bit);
 }
 
-void removeBottomLED(){
+void removeBottomLED() {
   uint8_t bright5bit = bright();
-  master[numbottom - 1].blue = 0; 
-  ledStrip.write(master,ledCount, bright5bit); 
+
+  // shift everything DOWN (toward index 0)
+  for (int i = 0; i < ledCount - 1; i++) {
+    master[i] = master[i + 1];
+  }
+
+  // clear the top after shifting
+  master[ledCount - 1].blue = 0;
+
+  // update LED strip
+  ledStrip.write(master, ledCount, bright5bit);
+}
+
+void clearBoard(){
+  uint8_t bright5bit = bright();
+  for(int i=0; i<ledCount-1; i++){
+    master[i].blue = 0; 
+  }
+  master[ledCount-1].blue = 0; 
+
+  // reset counters 
+  botk = 0; 
+  numbottom = 0; 
+  currCount = 0; 
+  
+  ledStrip.write(master, ledCount, bright5bit); 
 }
 
 // Function for LED game-over sequence 
@@ -183,28 +216,34 @@ void GameOver() {
   }
 }
 
-void loop() {
+void startFallingLEDs(){
   // Tetris is full - ran out of time
-  if (currCount == ledCount) { GameOver(); }
-
+  if (currCount == ledCount){ 
+    //Serial.println("1"); 
+    GameOver(); 
+  }
   // Queue Timer expired - add another LED to Queue
   if (logtimeT + tetristimer <= millis()) {
+    //Serial.println("2"); 
     logtimeT = millis();
-    Serial.println(tetristimer);
+    //Serial.println(tetristimer);
     ShiftStack();
     AddToQueue();
     tetristimer = tetristimer - 50; // Make turns shorter
     if (tetristimer < 100) { tetristimer = 100; }
   }
-
   if (logtimeF + falltimer <= millis()) {
+    //Serial.println("3"); 
     logtimeF = millis();
-    Serial.println(falltimer);
+    //Serial.println(falltimer);
     ShiftStack();
     falltimer = falltimer - 50;
     if (falltimer < 100) { falltimer = 100; }
   }
+}
 
+void loop() {
+  startFallingLEDs(); 
   currentTime = millis();
 
   // Read sensor states 
@@ -227,6 +266,7 @@ void loop() {
   } 
   if (pressed && !crushed && !tilted) {
     incrementScore();
+    removeBottomLED(); 
     pressed = 0;  
   }
 
@@ -238,6 +278,7 @@ void loop() {
 
   if(crushed && !pressed && !tilted){
     incrementScore(); 
+    removeBottomLED(); 
     crushed = 0; 
   }
   
@@ -249,7 +290,7 @@ void loop() {
 
   if(tilted && !pressed && !crushed){
     incrementScore(); 
-    removeBottomLED(); 
+    clearBoard(); 
     tilted = 0; 
   }
 }
