@@ -4,9 +4,11 @@
 #include "SparkFun_BMI270_Arduino_Library.h"
 
 // Declare command flags
-bool chopit = 0; 
+bool chopit = 1; 
 bool crushit = 0; 
-bool cookit = 1; 
+bool cookit = 0; 
+
+bool test = 0; 
 
 // Pressure sensor 1 pin variable 
 int press_1 = 45; 
@@ -145,6 +147,7 @@ void AddToQueue() {
 void ShiftStack() {
   //Serial.println("Stack Shifted");
   uint8_t bright5bit = bright();
+
   if (master[botk].blue == 255) {
     numbottom = numbottom + 1;
     botk = botk + 1;
@@ -167,21 +170,16 @@ void ShiftStack() {
   ledStrip.write(master, ledCount, bright5bit);
 }
 
-void removeBottomLED() {
+// Function to remove top LED in stack 
+void removeTopLED() {
   uint8_t bright5bit = bright();
-
-  // shift everything DOWN (toward index 0)
-  for (int i = 0; i < ledCount - 1; i++) {
-    master[i] = master[i + 1];
-  }
-
-  // clear the top after shifting
-  master[ledCount - 1].blue = 0;
-
-  // update LED strip
-  ledStrip.write(master, ledCount, bright5bit);
+  master[numbottom - 1].blue = 0; 
+  numbottom = numbottom - 1; 
+  botk = botk - 1; 
+  currCount = currCount - 1; 
 }
 
+// Function to clear LEDs off board (cook-it)
 void clearBoard(){
   uint8_t bright5bit = bright();
   for(int i=0; i<ledCount-1; i++){
@@ -193,7 +191,7 @@ void clearBoard(){
   botk = 0; 
   numbottom = 0; 
   currCount = 0; 
-  
+
   ledStrip.write(master, ledCount, bright5bit); 
 }
 
@@ -266,7 +264,8 @@ void loop() {
   } 
   if (pressed && !crushed && !tilted) {
     incrementScore();
-    removeBottomLED(); 
+    removeTopLED(); 
+    ShiftStack();  
     pressed = 0;  
   }
 
@@ -278,7 +277,7 @@ void loop() {
 
   if(crushed && !pressed && !tilted){
     incrementScore(); 
-    removeBottomLED(); 
+    removeTopLED(); 
     crushed = 0; 
   }
   
@@ -294,3 +293,4 @@ void loop() {
     tilted = 0; 
   }
 }
+// when you hit pressure sensor with only one led in stack it messes it up. if there are more than one in stack its ok. 
