@@ -1,6 +1,11 @@
 // --- APA102 LED Includes & Definitions ---
 #include <APA102.h>
 #include <Arduino.h>
+#include "HardwareSerial.h"
+#include "DFRobotDFPlayerMini.h"
+
+//HardwareSerial mySerial(2);
+//DFRobotDFPlayerMini myDFPlayer;
 
 const uint8_t dataPin = 47;
 const uint8_t clockPin = 48;
@@ -33,8 +38,8 @@ const int column_start_led[WIDTH] = {0, 20, 40};
 const int strike_start_led = 50;
 const int PIN_KEY_1 = 45; //strike zone 1 Pressure Sensor
 const int PIN_KEY_2 = 16; //strike zone 2 Hall Effect Sensor
-const int PIN_KEY_3 = 45; //strike zone 3 Button
-const int PIN_KEY_4 = 45; //gyroscope (for "Clean the Plate")
+const int PIN_KEY_3 = 15; //strike zone 3 Button
+const int PIN_KEY_4 = 46; //gyroscope (for "Clean the Plate")
 
 // --- Game State ---
 bool game_changed;
@@ -75,7 +80,11 @@ const long max_time_between_hits_ms = 500; // Must hit before this long passes t
 // --- Input Event Detection ---
 int last_key_1_state = HIGH;
 int last_key_2_state = HIGH;
-// *** REMOVED: int last_key_3_state = HIGH; ***
+int last_key_3_state = HIGH;
+
+// --- DFPlayer Requirements ---
+int active_column = 0; // 0, 1, or 2 depending on command
+long logTime = 0;
 
 void setup() {
   Serial.begin(115200);
@@ -83,6 +92,12 @@ void setup() {
   pinMode(PIN_KEY_2, INPUT_PULLUP);
   pinMode(PIN_KEY_3, INPUT);
   pinMode(PIN_KEY_4, INPUT);
+
+  // DFPlayer UART Setup
+  //mySerial.begin(9600, SERIAL_8N1, 17, 18);
+  //myDFPlayer.setTimeOut(500);  // Serial timeout 500ms
+  //myDFPlayer.volume(20);        // Volume 20
+  //myDFPlayer.EQ(0);            // Normal equalization
  
   // Configure 14 segment display pins
   for (int i = 0; i < 8; i++) {
@@ -97,6 +112,18 @@ void loop() {
   if (game_over) {
     return;
   }
+
+  //if (logTime + 3000 <= millis()) {
+    //logTime = millis();
+    //active_column = random(0, 3);
+    //if (active_column == 0) {
+      //myDFPlayer.playFolder(01, 001);
+    //}
+    //else if (active_column == 1) {
+      //myDFPlayer.playFolder(01, 002);
+    //}
+    //else {myDFPlayer.playFolder(01, 003); }
+  //}
 
   process_input();
 
@@ -175,12 +202,11 @@ void init_game() {
 
   last_key_1_state = HIGH;
   last_key_2_state = HIGH;
-  // *** REMOVED: last_key_3_state = HIGH; ***
+  last_key_3_state = HIGH;
 }
 
 void update_game() {
   unsigned long now = millis();
-
   if (is_plate_clean_active) {
     check_plate_clean_timeout();
     return; // Freeze the game
@@ -212,8 +238,9 @@ void process_input() {
     return;
   }
 
-  int current_key_1_state = digitalRead(PIN_KEY_1);
-  int current_key_2_state = digitalRead(PIN_KEY_2);
+  int current_key_1_state = digitalRead(PIN_KEY_1); // Read Pressure sensor
+  int current_key_2_state = digitalRead(PIN_KEY_2); // Read button? or hall effect?
+  int current_key_3_state = digitalRead(PIN_KEY_3); // Read button #2
   Serial.println(current_key_2_state);
   // *** REMOVED: int current_key_3_state = digitalRead(PIN_KEY_3); ***
 
@@ -224,14 +251,18 @@ void process_input() {
   if (current_key_2_state == LOW && last_key_2_state == HIGH) {
     process_hit_rhythm(1);
   }
+  if (current_key_3_state == LOW && last_key_3_state == HIGH) {
+    process_hit_rhythm(2);
+  }
   // *** REMOVED: rhythm logic for key 3 ***
 
   last_key_1_state = current_key_1_state;
   last_key_2_state = current_key_2_state;
+  last_key_3_state = current_key_3_state;
   // *** REMOVED: last_key_3_state = current_key_3_state; ***
  
   // *** ADDED BACK: old key_3 hold logic ***
-  bool key_3_is_down = (digitalRead(PIN_KEY_3) == HIGH); // Using original HIGH check
+  /*bool key_3_is_down = (digitalRead(PIN_KEY_3) == HIGH); // Using original HIGH check
 
   if (key_3_is_down) {
     if (!is_channel_2_holding) {
@@ -242,7 +273,7 @@ void process_input() {
     if (is_channel_2_holding) {
       is_channel_2_holding = false;
     }
-  }
+  }*/
 }
 
 void process_plate_clean_input() {
@@ -334,7 +365,7 @@ void update_channel_2_hold() {
     long hold_duration = now - channel_2_hold_start_time;
 
     if (hold_duration >= channel_2_hold_time_ms) {
-      process_hit_hold(2); // Call hold logic for channel 2
+      process_hit_hold(1); // Call hold logic for channel 2
       is_channel_2_holding = false;
     }
   }

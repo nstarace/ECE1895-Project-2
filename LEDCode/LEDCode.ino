@@ -77,7 +77,9 @@ uint8_t bright() {
 void AddToQueue() {
   Serial.println("Added to Queue");
   uint8_t bright5bit = bright();
-  master[ledCount - 1].blue = 255;
+  master[9].blue = 255;
+  master[19].red = 255;
+  master[39].green = 255;
   ledStrip.write(master, ledCount, bright5bit);
   currCount = currCount + 1;
 }
@@ -89,9 +91,10 @@ void ShiftStack() {
     numbottom = numbottom + 1;
     botk = botk + 1;
   }
-  for (int i = numbottom; i < ledCount - 1; i++) {
+  for (int i = numbottom; i < 10; i++) {
     master[i] = master[i + 1];
   }
+  for (int i = 28; i >)
 
   master[ledCount - 1].blue = 0;  // Reset master[i + 1] which is last position unaccounted for in the for loop
 
