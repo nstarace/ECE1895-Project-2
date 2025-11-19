@@ -4,8 +4,8 @@
 #include "HardwareSerial.h"
 #include "DFRobotDFPlayerMini.h"
 
-//HardwareSerial mySerial(2);
-//DFRobotDFPlayerMini myDFPlayer;
+HardwareSerial mySerial(2);
+DFRobotDFPlayerMini myDFPlayer;
 
 const uint8_t dataPin = 47;
 const uint8_t clockPin = 48;
@@ -37,7 +37,7 @@ const uint8_t ScoreDisplay[8] = {a2, b2, c2, d2, a1, b1, c1, d1};
 const int column_start_led[WIDTH] = {0, 20, 40};
 const int strike_start_led = 50;
 const int PIN_KEY_1 = 45; //strike zone 1 Pressure Sensor
-const int PIN_KEY_2 = 16; //strike zone 2 Hall Effect Sensor
+const int PIN_KEY_2 = 36; //strike zone 2 Hall Effect Sensor
 const int PIN_KEY_3 = 15; //strike zone 3 Button
 const int PIN_KEY_4 = 46; //gyroscope (for "Clean the Plate")
 
@@ -83,8 +83,8 @@ int last_key_2_state = HIGH;
 int last_key_3_state = HIGH;
 
 // --- DFPlayer Requirements ---
-int active_column = 0; // 0, 1, or 2 depending on command
-long logTime = 0;
+int activeZone = 0; // 0, 1, or 2 depending on command
+unsigned long lastPlayedAudio = 0;
 
 void setup() {
   Serial.begin(115200);
@@ -94,10 +94,14 @@ void setup() {
   pinMode(PIN_KEY_4, INPUT);
 
   // DFPlayer UART Setup
-  //mySerial.begin(9600, SERIAL_8N1, 17, 18);
-  //myDFPlayer.setTimeOut(500);  // Serial timeout 500ms
-  //myDFPlayer.volume(20);        // Volume 20
-  //myDFPlayer.EQ(0);            // Normal equalization
+  mySerial.begin(9600, SERIAL_8N1, 16, 17);
+  if (!myDFPlayer.begin(mySerial)) {
+    Serial.println("DFPlayer initialization failed!");
+    while (1) { delay(100); }   // Stop so the program won't crash
+  }
+  myDFPlayer.setTimeOut(500);  // Serial timeout 500ms
+  myDFPlayer.volume(20);        // Volume 20
+  myDFPlayer.EQ(0);            // Normal equalization
  
   // Configure 14 segment display pins
   for (int i = 0; i < 8; i++) {
@@ -113,17 +117,16 @@ void loop() {
     return;
   }
 
-  //if (logTime + 3000 <= millis()) {
-    //logTime = millis();
-    //active_column = random(0, 3);
-    //if (active_column == 0) {
-      //myDFPlayer.playFolder(01, 001);
-    //}
-    //else if (active_column == 1) {
-      //myDFPlayer.playFolder(01, 002);
-    //}
-    //else {myDFPlayer.playFolder(01, 003); }
-  //}
+  // --- Play Random Audio space 5 Seconds ---
+  if (millis() - lastPlayedAudio >= 5000) {
+    lastPlayedAudio = millis();
+
+    int randFile = random(1, 4);   // Files 1, 2, or 3   
+    myDFPlayer.playFolder(01, randFile);
+
+    activeZone = randFile;
+  }
+
 
   process_input();
 
@@ -246,15 +249,24 @@ void process_input() {
 
   // Check for a new press (state changed from HIGH to LOW)
   if (current_key_1_state == LOW && last_key_1_state == HIGH) {
-    process_hit_rhythm(0);
+    if (activeZone == 1) {
+      process_hit_rhythm(0);
+    }
+    else { strikes = strikes + 1; }
   }
   if (current_key_2_state == LOW && last_key_2_state == HIGH) {
-    process_hit_rhythm(1);
+    if (activeZone == 2) {
+      process_hit_rhythm(1);
+    }
+    else { strikes = strikes + 1; }
   }
   if (current_key_3_state == LOW && last_key_3_state == HIGH) {
-    process_hit_rhythm(2);
+    if (activeZone == 3) {
+      process_hit_rhythm(2);
+    }
+    else { strikes = strikes + 1; }
   }
-  // *** REMOVED: rhythm logic for key 3 ***
+  // need to add imu for hit 4
 
   last_key_1_state = current_key_1_state;
   last_key_2_state = current_key_2_state;

@@ -1,20 +1,21 @@
 // Simply call incrementScore()
 
-const uint8_t a1 = 41;
-const uint8_t b1 = 1;
-const uint8_t c1 = 2;
-const uint8_t d1 = 42;
+const uint8_t a1 = 34;
+const uint8_t b1 = 39;
+const uint8_t c1 = 38;
+const uint8_t d1 = 35;
 
-const uint8_t a2 = 37;
-const uint8_t b2 = 40;
-const uint8_t c2 = 39;
-const uint8_t d2 = 38;
+const uint8_t a2 = 30;
+const uint8_t b2 = 33;
+const uint8_t c2 = 32;
+const uint8_t d2 = 31;
 
 const uint8_t ScoreDisplay[8] = {a2, b2, c2, d2, a1, b1, c1, d1};
 byte currScore = 0x00;
 
 
 void setup() {
+
   for (int i = 0; i < 8; i++) {
     pinMode(ScoreDisplay[i], OUTPUT);
   }

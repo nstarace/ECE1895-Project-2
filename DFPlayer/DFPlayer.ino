@@ -13,7 +13,7 @@ void setup() {
   Serial.begin(115200);
 
   // Serial2: RX = GPIO16, TX = GPIO17
-  mySerial.begin(9600, SERIAL_8N1, 17, 18);
+  mySerial.begin(9600, SERIAL_8N1, 16, 17);
 
   Serial.println();
   Serial.println(F("DFRobot DFPlayer Mini"));
