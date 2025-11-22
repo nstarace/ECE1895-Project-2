@@ -1,4 +1,0 @@
-Removed Pin From Net: NetName=Rx_ESP Pin=J5-01
-Removed Pin From Net: NetName=Tx_ESP Pin=J5-03
-Added Pin To Net: NetName=Tx_ESP Pin=J5-01
-Added Pin To Net: NetName=Rx_ESP Pin=J5-03

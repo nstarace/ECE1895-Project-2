@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=5V Pin=J5-02
+Removed Pin From Net: NetName=Rx_ESP Pin=J5-03
+Removed Pin From Net: NetName=GND Pin=J5-04
+Change Component Footprint: Designator=J5 Old Footprint=SAMTEC_TSM-102-01-L-DV-P-TR New Footprint=SAMTEC_TSM-102-01-X-SV
+Change Component Comment : Designator=J5 Old Comment=TSM-102-01-L-DV-P-TR New Comment=TSM-102-01-X-SV
+Change component parameters: Designator = "J5" ("J5"); Footprint = "SAMTEC_TSM-102-01-L-DV-P-TR"; UniqueID = "\WKHPMCGF" ("\WKHPMCGF")
+Change component parameters (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/TSM-102-01-L-SV/Samtec+Inc./view-part/?ref=eda"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "Samtec"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "TSM-102-01-L-SV"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/TSM-102-01-L-SV/Samtec+Inc./view-part/?ref=snap"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Rx_ESP Pin=J5-02

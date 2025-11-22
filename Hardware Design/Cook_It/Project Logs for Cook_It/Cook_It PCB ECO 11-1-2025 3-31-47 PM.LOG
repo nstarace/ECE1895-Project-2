@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=P_3 Pin=U1-18
+Removed Pin From Net: NetName=Data_Strip Pin=U1-24
+Removed Pin From Net: NetName=CLK_Strip Pin=U1-25
+Added Pin To Net: NetName=Data_Strip Pin=U1-23
+Added Pin To Net: NetName=CLK_Strip Pin=U1-24
+Added Pin To Net: NetName=P_3 Pin=U1-25

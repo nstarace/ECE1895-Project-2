@@ -1,8 +1,0 @@
-Removed Pin From Net: NetName=Hall_2 Pin=U1-13
-Removed Pin From Net: NetName=Hall_1 Pin=U1-14
-Removed Pin From Net: NetName=Hall_3 Pin=U1-16
-Change Component Description : Designator=U8 Old Description=.56IN. 7 SEGMENT SINGLE DISPLAY, 565NM GREEN, GRAY FACE, WHITE SEGMENTS, COMMON New Description=.56IN. 7 SEGMENT SINGLE DISPLAY, 565NM GREEN, GRAY FACE, WHITE SEGMENTS, COMMON | Lumex LDS-C512RI
-Change Component Description : Designator=U9 Old Description=.56IN. 7 SEGMENT SINGLE DISPLAY, 565NM GREEN, GRAY FACE, WHITE SEGMENTS, COMMON New Description=.56IN. 7 SEGMENT SINGLE DISPLAY, 565NM GREEN, GRAY FACE, WHITE SEGMENTS, COMMON | Lumex LDS-C512RI
-Added Pin To Net: NetName=Hall_3 Pin=U1-13
-Added Pin To Net: NetName=Hall_2 Pin=U1-14
-Added Pin To Net: NetName=Hall_1 Pin=U1-16
