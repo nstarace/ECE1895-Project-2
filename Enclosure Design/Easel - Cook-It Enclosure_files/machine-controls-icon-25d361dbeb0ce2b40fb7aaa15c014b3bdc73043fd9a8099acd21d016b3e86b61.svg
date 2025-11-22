@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
-  <polyline points="28 17 34 20 28 23" fill="none" stroke="white"/>
-  <polyline points="17 28 20 34 23 28" fill="none" stroke="white"/>
-  <polyline points="12 17 6 20 12 23" fill="none" stroke="white"/>
-  <polyline points="17 12 20 6 23 12" fill="none" stroke="white"/>
-</svg>
